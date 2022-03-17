@@ -1,6 +1,7 @@
 # ADF-Hydra
 
-3.1.	Ogólny opis aplikacji
+Ogólny opis aplikacji
+
 Użytkownicy wyrażający chęć korzystania z aplikacji, mają możliwość  zarejestrowania się do niej oraz zalogowania (np. monterzy prowadzący jednoosobową działalność gospodarczą).
 
 - Zakładka „Klienci”
