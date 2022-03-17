@@ -1,0 +1,22 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="delete-user-outside">
+        <div class="delete-user">
+            <h1>Usuń element!</h1>
+            <h3>Usunięty zostanie użytkownik wraz ze wszystkimi danymi, klientami, usługami oraz plikami.</h3>
+            <h2>Czy na pewno chcesz usunąć użytkownika? </h2>
+
+            <div class="delete-user-buttons">
+                <button class="delete">Tak</button>
+                <button onclick="location.href='/strona_glowna/profil_uzytkownika'">Nie</button>
+            </div>
+        </div>
+    </div><br><br><br><br>
+    
+    <script src="/js/jsUserProfile/jsDeleteUser.js"></script>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

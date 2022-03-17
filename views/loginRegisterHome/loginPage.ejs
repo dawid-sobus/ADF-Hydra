@@ -1,0 +1,24 @@
+<html lang="pl">
+
+    <%- include('../partials/head.ejs') %>
+<body>
+    <h1 class="adfHydra">ADF-<span>Hydra</span></h1>
+
+    <div class="log-outside">
+    <div class="log">
+        <h2>Logowanie</h2>
+        <form class="loginForm" action="/logowanie" method="POST">
+            <label for="login">Login:</label><br>
+            <input type="text" id="login" name="login" placeholder="Podaj login" required><br>
+            <label for="password">Hasło:</label><br>
+            <input type="password" id="password" name="password" placeholder="Podaj hasło" required><br><br>
+            
+            <button class="login-button">Zaloguj się</button><br><br>
+            <label for="register-button">Jeśli nie posiadasz konta zarejestruj się:</label><br>
+            <button class="register-button" onclick="location.href='/rejestracja'">Zarejestruj się</button>
+        </form>
+    </div>
+</div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

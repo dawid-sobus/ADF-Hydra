@@ -1,0 +1,26 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <div class="user-profile-outsite">
+    <div class="user-profile">
+        <h2>Dane użytkownika:</h2>
+
+        <div class="user-profile-data">
+        <label>Login: <span><%= user.login %></span></label>
+
+        <label>Imie: <span><%= user.name %></span></label>
+        <label>Nazwisko: <span><%= user.lastName %></span></label>
+        <label>Płeć: <span><%= user.gender %></span></label>
+        <label>Data urodzenia: <span><%= user.dateOfBirth %></span></label>
+        <label>E-mail: <span><%= user.email %></span></label>
+        <label>Tel: <span><%= user.phone %></span></label><br>
+        
+        <button onclick="location.href='/strona_glowna/profil_uzytkownika/edytuj_profil'">Edytuj użytkownika</button>
+        <button onclick="location.href='/strona_glowna/profil_uzytkownika/usun_uzytkownika'">Usuń użytkownika</button>
+        </div>
+    </div>
+    </div><br><br><br><br>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

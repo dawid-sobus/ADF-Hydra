@@ -1,0 +1,30 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <div class="edit-client">
+        <h2>Edytuj dane klienta</h2>
+
+        <form class="form-edit-client" action="/strona_glowna/klienci/<%= clientId._id %>/edytuj_klienta" method="POST" enctype="multipart/form-data">
+            <h3>Dane klienta:</h3>
+
+            <label for="name">Imie:<span>*</span></label><br>
+            <input type="text" id="name" name="name" value="<%= clientId.name %>" required><br>
+            <label for="lastName">Nazwisko:<span>*</span></label><br>
+            <input type="text" id="lastName" name="lastName" value="<%= clientId.lastName %>" required><br>
+            <label for="address">Adres:<span>*</span></label><br>
+            <input type="text" id="address" name="address" value="<%= clientId.address %>" required><br>
+
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" value="<%= clientId.email %>"><br>
+            <label for="phone">Numer telefonu:<span>*</span> (np: 444000111)</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" value="<%= clientId.phone %>" required><br><br>
+            
+            
+            <button class="editClient-button">Edytuj dane klienta</button>
+            
+        </form>
+    </div><br><br><br><br><br>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

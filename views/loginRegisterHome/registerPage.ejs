@@ -1,0 +1,77 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <h1 class="adfHydra">ADF-<span>Hydra</span></h1>
+    <div class="register-outside">
+    <div class="register">
+        <h2>Rejestarcja</h2>
+
+        <form class="form" action="/rejestracja" method="POST">
+            <label for="name">Imie:<span>*</span></label><br>
+            <input type="text" id="name" name="name" placeholder="Podaj imię" required><br>
+            <label for="lastName">Nazwisko:<span>*</span></label><br>
+            <input type="text" id="lastName" name="lastName" placeholder="Podaj nazwisko" required><br>
+            <label for="option-1">Płeć:<span>*</span></label><br>
+            <input type="radio" id="option-1" name="gender" value="Kobieta" required>
+            <label for="option-1" class="gender-option">Kobieta</label>
+            <input type="radio" name="gender" id="option-2" value="Mężczyzna" required>
+            <label for="option-2" class="gender-option">Mężczyzna</label><br><br>
+            
+            <label>Data urodzenia:<span>*</span></label><br>
+            <label for="day" class="selectData">Dzień:</label>
+
+            <select name="day" id="day" onchange="daysInMonth()">
+                <% for(var i=1; i<=31; i++) { %>
+                    <% if(i<10) { %> 
+                        <option value="0<%= i %>">0<%= i %></option>
+                    <% } else { %> 
+                        <option value="<%= i %>"><%= i %></option>
+                    <% } %> 
+                 <% } %>
+            </select>
+
+            <label for="month" class="selectData">Miesiąc:</label>
+            <select name="month" id="month">
+                <option value="01">styczeń</option>
+                <option value="02">luty</option>
+                <option value="03">marzec</option>
+                <option value="04">kwiecień</option>
+                <option value="05">maj</option>
+                <option value="06">czerwic</option>
+                <option value="07">lipiec</option>
+                <option value="08">sierpień</option>
+                <option value="09">wrzesień</option>
+                <option value="10">październik</option>
+                <option value="11">listopad</option>
+                <option value="12">grudzień</option>
+            </select>
+            <label for="year" class="selectData">Rok:</label>
+            <select name="year" id="year">
+                <% for(var i=new Date().getFullYear(); i>=1920; i--) { %>
+                   <option value="<%= i %>"><%= i %></option>
+                <% } %>
+            </select><br><br>
+
+            <label for="email">E-mail:<span>*</span></label><br>
+            <input type="email" id="email" name="email" placeholder="Podaj E-mail" required><br>
+            <label for="phone">Numer telefonu: (np: 444000111)</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" placeholder="Podaj numer telefonu"><br><br>
+
+            <label for="login">Login:<span>*</span></label><br>
+            <input type="text" id="login" name="login" placeholder="Podaj login" required><br>
+            <label for="password">Hasło:<span>*</span></label><br>
+            <input type="password" id="password" name="password" minlength="5" placeholder="Podaj hasło" required" onchange="check()"><br>
+            <label for="rPassword">Powtórz hasło:<span>*</span></label><br>
+            <input type="password" id="rPassword" name="rPassword" minlength="5" placeholder="Ponownie wpisz hasło" required onchange="check()"><br><br>
+
+            <button class="register-button" onclick="return check(), daysInMonth()">Zarejestruj się</button><br><br>
+            <label for="login-button">Jeśli już masz konto przejdź do strony logowania:</label><br>
+            <button class="login-button" onclick="location.href='/logowanie'">Zaloguj się</button>
+            
+        </form>
+    </div>
+</div>
+    <%- include('../partials/footer.ejs') %>
+    <script src="/js/jsLoginRegisterHome/jsRegisterPage.js"></script>
+</body>
+</html>

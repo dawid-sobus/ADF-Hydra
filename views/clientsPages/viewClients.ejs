@@ -1,0 +1,60 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>
+<body onload="letters()">
+    <%- include('../partials/nav.ejs') %>
+        
+        <div class="clientsh2">
+            <h2>Klienci</h2>
+            <input type="text" class="search-clients" id="search_input" placeholder="szukaj klienta ...">
+        </div>
+        <div class="client-button">
+            <button class="addCustomers-button" onclick="location.href='/strona_glowna/dodaj_klienta'">Dodaj klienta</button><br><br>
+        </div>
+        <div class="clientsOutside">
+        <div class="clients">
+            <% if(clientR.length > 0) { %>
+
+                    <% var counter = 1 %>
+                    <% clientR.forEach(client => { %>
+                        <div class="client">
+                        <details>
+                        <summary>
+                            <div class="letters"></div>
+
+                            <div class="summary-data">
+                                <label><span><%= counter %>. Klient</span></label><br>
+                                <label class="clientName">Imię: <span><%= client.name %></span></label>
+                                <label class="clientLastName">Nazwisko: <span><%= client.lastName %></span></label>
+                                <label class="adress">Adres: <span><%= client.address %></span></label> 
+                            </div>
+                        </summary>
+
+                        <div class="longClients">
+                            <div class="clientData1">
+                                <label>Imię: <span><%= client.name %></span></label><br>
+                                <label>Nazwisko: <span><%= client.lastName %></span></label><br>
+                            </div>
+    
+                            <div class="clientData2">
+                                <label>Tel: <span><%= client.phone %></span></label><br>
+                                <label>E-mail: <span><%= client.email %></span></label><br>
+                                <label>Adres: <span><%= client.address %></span></label><br>
+                            </div>
+                        <a href="/strona_glowna/klienci/<%= client._id %>">Klient <%= counter %>: Usługi</a>
+                        </div>
+                        </details>
+                    </div>
+                        <% counter++ %>
+                    <% }) %>
+                
+            <% } else { %>
+                    <div class="noTasks">
+                        <label>Brak klientów do wyświetlenia!</label>
+                    </div>
+            <% } %>         
+        </div>
+    </div><br><br><br><br><br><br><br>
+    <%- include('../partials/footer.ejs') %>
+    <script src="/js/jsClientsPages/jsViewClients.js"></script>
+</body>
+</html>

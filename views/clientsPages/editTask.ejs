@@ -1,0 +1,44 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <div class="edit-task">
+        <h2>Edytuj usługę</h2>
+
+        <form class="form-edit-task" action="/strona_glowna/klienci/<%= clientR._id %>/<%= task._id %>/edytuj_usluge" method="POST" enctype="multipart/form-data">
+            <h3>Dane usługi:</h3>
+
+            <div class="form-edit-task-first">
+                <label for="nameOfService">Nazwa usługi:<span>*</span></label><br>
+                <input type="text" id="nameOfService" name="nameOfService" value="<%= task.nameOfService %>" required><br>
+                <label for="placeOfAssembly">Miejsce montażu:<span>*</span> (ul.ulica 220, miejscowość)</label><br>
+                <input type="text" id="placeOfAssembly" name="placeOfAssembly" value="<%= task.placeOfAssembly %>" required><br><br>
+                <label for="dateOfService">Data i godzina rozpoczęcia zaplanowanej usługi:<span>*</span></label><br>
+                <input type="datetime-local" id="dateOfService" name="dateOfService" value="<%= moment(task.dateOfService).format('YYYY-MM-DDTHH:mm') %>" required><br>
+                <label for="dateOfAssembly">Data montażu:</label><br>
+                <input type="date" id="dateOfAssembly" name="dateOfAssembly" value="<%= moment(task.dateOfAssembly).format('YYYY-MM-DD') %>"><br>        
+                <label for="warrantyDate">Data gwarancji:</label><br>
+                <input type="date" id="warrantyDate" name="warrantyDate" value="<%= moment(task.warrantyDate).format('YYYY-MM-DD') %>"><br>
+                <label for="DateNextInspection">Data następnego przeglądu:</label><br>
+                <input type="date" id="DateNextInspection" name="DateNextInspection" value="<%= moment(task.DateNextInspection).format('YYYY-MM-DD') %>"><br>
+                <label for="firstLaunchDate">Data pierwszego uruchomienia urządzenia:</label><br>
+                <input type="date" id="firstLaunchDate" name="firstLaunchDate" value="<%= moment(task.firstLaunchDate).format('YYYY-MM-DD') %>"><br><br>
+            </div>
+
+            <div class="form-edit-task-second">
+                <label for="performedActivity">Jaka czynność ma być/była wykonywana:</label><br>
+                <textarea name="performedActivity" id="performedActivity"><%= task.performedActivity %></textarea><br>
+                <label for="dateTime">Podaj datę i godzinę wykonania czynności:</label><br>
+                <input type="datetime-local" id="dateTime" name="dateTime" value="<%= moment(task.dateTime).format('YYYY-MM-DDTHH:mm') %>"><br><br>
+                <label for="mountedDevices">Zamontowane urządzenia/części:</label><br>
+                <textarea name="mountedDevices" id="mountedDevices"><%= task.mountedDevices %></textarea><br><br>
+            </div>
+            <br><br><br>
+
+            <button class="editTask-button">Edytuj usługę</button>
+            
+        </form>
+    </div><br><br><br><br>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

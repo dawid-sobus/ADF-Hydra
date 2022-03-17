@@ -1,0 +1,67 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <div class="addRelatedTaskh2">
+        <h2>Dodaj zadanie powiązane</h2>
+    </div>
+    <div class="related-task-service">
+        <div class="long-client-service">
+        <h3>Dane Klienta:</h3>
+
+        <div class="data-client1">
+            <label>Imię: <span><%= clientR.name %></span></label><br>
+            <label>Nazwisko: <span><%= clientR.lastName %></span></label><br>
+        </div>
+    
+        <div class="data-client2">
+            <label>Tel: <span><%= clientR.phone %></span></label><br>
+            <label>E-mail: <span><%= clientR.email %></span></label><br>
+            <label>Adres: <span><%= clientR.address %></span></label><br>
+        </div>
+        </div>
+
+        <div class="add-related-task-service">
+        <h3>Dane powiązanej usługi:</h3>
+
+        <form class="form" action="/strona_glowna/serwis/zadanie_powiazane/<%= task._id %>" method="POST" enctype="multipart/form-data">
+
+            <div class="form-add-related-task-service-first">
+                <label for="nameOfService">Nazwa usługi:<span>*</span></label><br>
+                <input type="text" id="nameOfService" name="nameOfService" value="<%= task.nameOfService %>" required><br>
+                <label for="placeOfAssembly">Miejsce montażu:<span>*</span> (ul.ulica 220, miejscowość)</label><br>
+                <input type="text" id="placeOfAssembly" name="placeOfAssembly" value="<%= task.placeOfAssembly %>" required><br><br>
+                <label for="dateOfService">Data i godzina rozpoczęcia zaplanowanej usługi:<span>*</span></label><br>
+                <input type="datetime-local" id="dateOfService" name="dateOfService" required><br>
+                <label for="dateOfAssembly">Data montażu:</label><br>
+                <input type="date" id="dateOfAssembly" name="dateOfAssembly"><br>        
+                <label for="warrantyDate">Data gwarancji:</label><br>
+                <input type="date" id="warrantyDate" name="warrantyDate" value="<%= moment(task.warrantyDate).format('YYYY-MM-DD') %>"><br>
+                <label for="DateNextInspection">Data następnego przeglądu:</label><br>
+                <input type="date" id="DateNextInspection" name="DateNextInspection"><br>
+                <label for="firstLaunchDate">Data pierwszego uruchomienia urządzenia:</label><br>
+                <input type="date" id="firstLaunchDate" name="firstLaunchDate"><br>
+            </div>
+
+            <div class="form-add-related-task-service-second">
+                <label for="performedActivity">Jaka czynność ma być/była wykonywana:</label><br>
+                <textarea name="performedActivity" id="performedActivity"></textarea><br>
+                <label for="dateTime">Podaj datę i godzinę wykonania czynności:</label><br>
+                <input type="datetime-local" id="dateTime" name="dateTime"><br><br>
+                <label for="mountedDevices">Zamontowane urządzenia/części:</label><br>
+                <textarea name="mountedDevices" id="mountedDevices"></textarea><br><br>
+                <label for="invoice">Faktura za wykonanie zlecenia:</label><br>
+                <input type="file" name="invoice" accept=".pdf,application/pdf" multiple><br><br>
+                <label for="postWarrantyProtocols">Protokoły pogwarancyjne:</label><br>
+                <input type="file" name="postWarrantyProtocols" accept=".pdf,application/pdf" multiple><br>
+            </div>
+            <br><br><br>
+
+            <button class="editTask-button">Dodaj usługę</button>
+            
+        </form> 
+        </div>       
+    </div><br><br><br><br>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

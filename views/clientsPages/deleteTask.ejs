@@ -1,0 +1,22 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="delete-task-outside">
+        <div class="delete-task">
+            <h1>Usuń element!</h1>
+            <h3>Usunięta zostanie usługa wraz ze wszystkimi danymi oraz plikami wprowadzonymi przez użytkownika.</h3>
+            <h2>Czy na pewno chcesz usunąć usługę? </h2>
+
+            <div class="delete-task-buttons">
+                <button class="delete" data-doc="<%= clientR._id %>/<%= task._id %>/usun_usluge">Tak</button>
+                <button onclick="location.href='/strona_glowna/klienci/<%= clientR._id%>'">Nie</button>
+            </div>
+        </div>
+    </div><br><br><br><br>
+
+    <script src="/js/jsClientsPages/jsDeleteTask.js"></script>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADF-Hydra | <%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/js/jsServicePages/jsViewService.js" async></script>
+</head>
+<%- include('../partials/nav.ejs') %>
+
+<body onload="counting('dateInspection', 'clockInspection'), checkedRadio(), shortA(), letters_last_name_service()"> <!-- onload="counting('dateService', 'clock'), counting('dateInspection', 'clockInspection'), checkedRadio()" -->
+    <div class="serviceh2">
+    <h2>Serwis</h2>
+    </div>
+    <div class="service">
+        
+        <button class="calendar-button" onclick="location.href='/strona_glowna/serwis/kalendarz'">Zobacz kalendarz <span>usług</span></button>
+
+        <div class="taskAheadBack">
+        
+        <div class="twoWeeksAhead">
+            <h3>Usługi zaplanowane 2 <span class="span-h3">tygodnie</span> <span class="span-h3">do</span> <span class="span-h3">przodu:</span></h3>
+            <% if(tasks.length> 0) { %>
+
+                <% var dataTaskService = '' %> 
+                <% var counterTaskDay = 1 %> 
+                <% tasks.forEach(task=> { %>
+                    <% var clientC %>
+                    <% clients.every(client=> { %>
+                        <% if(client._id==task.clientId){ %>
+                            <% clientC=client %>
+                            <% return false %> 
+                        <% } %>
+                        <% return true %>
+                    <% }) %>
+                        
+                    <% if(moment(task.dateOfService).format('YYYY-MM-DD') != dataTaskService) { %> 
+                        <div class="main-date">
+                            <label class="letter-day"><%= moment(task.dateOfService).locale('pl').format('dddd') %> |</label>
+                            <label><%= moment(task.dateOfService).locale('pl').format('DD') %></label>
+                            <label><%= moment(task.dateOfService).locale('pl').format('MMMM') %></label>
+                        </div>
+                        <% counterTaskDay = 1 %>
+                    <% } %> 
+                    <% dataTaskService = moment(task.dateOfService).format('YYYY-MM-DD') %>
+
+                    <details>
+                    <summary>
+                        <div class="letters_to_center">
+                            <div class="letters">
+                                <label class="letters_label"><span><%= moment(task.dateOfService).format('HH:mm') %></span></label>
+                                <label><span><%= moment(task.dateOfService).format('YYYY-MM-DD') %></span></label>
+                            </div>
+                        </div>
+
+                        <div class="summary-data">
+                            <label><span><%= counterTaskDay %>. Usługa</span></label><br>
+                            <label class="dateService"><span><%= moment(task.dateOfService).format('YYYY-MM-DD/HH:mm') %></span></label>
+                            <label class="summary-data-client">Klient: <span><%= clientC.name %> <%= clientC.lastName %></span></label>
+                            <label>Usługa: <span><%= task.nameOfService %></span></label>
+                            <label>Adres: <span><%= task.placeOfAssembly %></span></label>
+                        </div>
+                    </summary>
+
+                        <div class="longTasksAndClient">
+                            <br>
+                            <div class="clientDataOne">
+                                <label>Data wykonania: <span><%= moment(task.dateOfService).format('YYYY-MM-DD/hh:mm') %></span></label><br>
+                                <label>Imię: <span><%= clientC.name %></span></label><br>
+                                <label>Nazwisko: <span><%= clientC.lastName %></span></label><br>
+                                <label>Adres: <span><%= clientC.address %></span></label><br>
+                                <label>Telefon: <span><%= clientC.phone %></span></label><br>
+                                <label>E-mail: <span><%= clientC.email %></span></label><br>
+                            </div>
+
+                            <div class="taskDataOne">
+                                <br>
+                                <label>Id: <span><%= task._id %></span> </label><br>
+                                <label>Nazwa usługi: <span><%= task.nameOfService %></span> </label><br>
+                                <label>Miejsce montażu: <span><%= task.placeOfAssembly %></span> </label><br>
+                                <label>Data i godzina rozpoczęcia zaplanowanej usługi: <span><% if(moment(task.dateOfService).format('YYYY-MM-DD | HH:mm') !== 'Invalid date'){ %> <%= moment(task.dateOfService).format('YYYY-MM-DD | HH:mm') %> <% } %></span></label><br>
+                                <label>Data montażu: <span><% if(moment(task.dateOfAssembly).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.dateOfAssembly).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Data gwarancji: <span><% if(moment(task.warrantyDate).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.warrantyDate).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Data następnego przeglądu: <span><% if(moment(task.DateNextInspection).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.DateNextInspection).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Data pierwszego uruchomienia urządzenia: <span><% if(moment(task.firstLaunchDate).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.firstLaunchDate).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Jaka czynność ma być/była wykonywana:<br> <span><%= task.performedActivity %></span></label><br>
+                                <label>Podaj datę i godzinę wykonania czynności: <span><% if(moment(task.dateTime).format('YYYY-MM-DD | HH:mm') !== 'Invalid date'){ %> <%= moment(task.dateTime).format('YYYY-MM-DD | HH:mm') %> <% } %></span></label><br>
+                                <label>Zamontowane urządzenia/części: <br> <span><%= task.mountedDevices %></span></label><br><br>
+                                <label>Faktura za wykonanie zlecenia:</label><br><br>
+                                <% task.invoice.forEach(inv => { %>
+                                    <a href="/strona_glowna/klienci/<%= clientC._id %>/<%= task._id %>/<%= inv %>" class="inv" title="<%= inv %>">
+                                        <img src="/files-icon/pdf.png" alt="<%= inv %>" width="27" height="32"><br>  
+                                        <span><%= inv %></span>
+                                    </a>
+                                <% }) %> 
+                                <br><br>
+                                <label>Protokoły pogwarancyjne:</label><br><br>
+                                <% task.postWarrantyProtocols.forEach(protocols => { %>
+                                    <a href="/strona_glowna/klienci/<%= clientC._id %>/<%= task._id %>/<%= protocols %>" class="prot" title="<%= protocols %>">
+                                        <img src="/files-icon/pdf.png" alt="<%= protocols %>" width="27" height="32"><br>
+                                        <span><%= protocols %></span>
+                                    </a>
+                                <% }) %> 
+                            </div>
+
+                        </div>
+                    </details>
+                    <% counterTaskDay++ %>
+                <% }) %>                                                        
+            <% } else { %>
+                    <div class="noTasks">
+                        <label>Brak usług do wyświetlenia!</label>
+                    </div>
+            <% } %> 
+        </div>
+
+        <div class="twoWeeksBack">
+            <h3>Usługi wykonane 2 <span class="span-h3">tygodnie</span> <span class="span-h3">do</span> <span class="span-h3">tyłu:</span></h3>
+            <% if(tasksBack.length> 0) { %>
+
+                <% var dataTaskService = '' %> 
+                <% var counterTaskDay = 1 %> 
+                <% tasksBack.forEach(task=> { %>
+                    <% var clientC %>
+                    <% clients.every(client=> { %>
+                        <% if(client._id==task.clientId){ %>
+                            <% clientC=client %>
+                            <% return false %>
+                        <% } %>
+                        <% return true %>
+                    <% }) %>
+
+                    <% if(moment(task.dateOfService).format('YYYY-MM-DD') != dataTaskService) { %> 
+                        <div class="main-date">
+                            <label class="letter-day"><%= moment(task.dateOfService).lang('pl').format('dddd') %> |</label>
+                            <label><%= moment(task.dateOfService).lang('pl').format('DD') %></label>
+                            <label><%= moment(task.dateOfService).lang('pl').format('MMMM') %></label>
+                        </div>
+                        <% counterTaskDay = 1 %>
+                    <% } %> 
+                    <% dataTaskService = moment(task.dateOfService).format('YYYY-MM-DD') %>
+
+                    <details>
+                    <summary>
+                        <div class="letters_to_center">
+                            <div class="letters">
+                                <label class="letters_label"><span><%= moment(task.dateOfService).format('HH:mm') %></span></label>
+                                <label><span><%= moment(task.dateOfService).format('YYYY-MM-DD') %></span></label>
+                            </div>
+                        </div>
+
+                        <div class="summary-data">
+                            <label><span><%= counterTaskDay %>. Usługa</span></label><br>
+                            <label id="dateService"><span><%= moment(task.dateOfService).format('YYYY-MM-DD/HH:mm') %></span></label>
+                            <label class="summary-data-client">Klient: <span><%= clientC.name %> <%= clientC.lastName %></span></label>
+                            <label>Usługa: <span><%= task.nameOfService %></span></label>
+                            <label>Adres: <span><%= task.placeOfAssembly %></span></label>
+                        </div>
+
+                        <div class="service-button-back">
+                            <button onclick="location.href='/strona_glowna/serwis/uzupelnij_dane/<%= task._id %>'">Uzupełnij dane</button>
+                        </div>
+                    </summary>
+
+                        <div class="longTasksAndClient">
+                            <br>
+                            <div class="clientDataOne">
+                                <label>Data wykonania: <span><%= moment(task.dateOfService).format('YYYY-MM-DD/HH:mm') %></span></label><br>
+                                <label>Imię: <span><%= clientC.name %></span></label><br>
+                                <label>Nazwisko: <span><%= clientC.lastName %></span></label><br>
+                                <label>Adres: <span><%= clientC.address %></span></label><br>
+                                <label>Telefon: <span><%= clientC.phone %></span></label><br>
+                                <label>E-mail: <span><%= clientC.email %></span></label><br>
+                            </div>
+
+                            <div class="taskDataOne">
+                                <br>
+                                <label>Id: <span><%= task._id %></span> </label><br>
+                                <label>Nazwa usługi: <span><%= task.nameOfService %></span> </label><br>
+                                <label>Miejsce montażu: <span><%= task.placeOfAssembly %></span> </label><br>
+                                <label>Data i godzina rozpoczęcia zaplanowanej usługi: <span><% if(moment(task.dateOfService).format('YYYY-MM-DD | HH:mm') !== 'Invalid date'){ %> <%= moment(task.dateOfService).format('YYYY-MM-DD | HH:mm') %> <% } %></span></label><br>
+                                <label>Data montażu: <span><% if(moment(task.dateOfAssembly).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.dateOfAssembly).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Data gwarancji: <span><% if(moment(task.warrantyDate).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.warrantyDate).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Data następnego przeglądu: <span><% if(moment(task.DateNextInspection).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.DateNextInspection).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Data pierwszego uruchomienia urządzenia: <span><% if(moment(task.firstLaunchDate).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.firstLaunchDate).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Jaka czynność ma być/była wykonywana:<br> <span><%= task.performedActivity %></span></label><br>
+                                <label>Podaj datę i godzinę wykonania czynności: <span><% if(moment(task.dateTime).format('YYYY-MM-DD | HH:mm') !== 'Invalid date'){ %> <%= moment(task.dateTime).format('YYYY-MM-DD | HH:mm') %> <% } %></span></label><br>
+                                <label>Zamontowane urządzenia/części: <br> <span><%= task.mountedDevices %></span></label><br><br>
+                                <label>Faktura za wykonanie zlecenia:</label><br><br>
+                                <% task.invoice.forEach(inv => { %>
+                                    <a href="/strona_glowna/klienci/<%= clientC._id %>/<%= task._id %>/<%= inv %>" class="inv" title="<%= inv %>">
+                                        <img src="/files-icon/pdf.png" alt="<%= inv %>" width="27" height="32"><br>  
+                                        <span><%= inv %></span>
+                                    </a>
+                                <% }) %> 
+                                <br><br>
+                                <label>Protokoły pogwarancyjne:</label><br><br>
+                                <% task.postWarrantyProtocols.forEach(protocols => { %>
+                                    <a href="/strona_glowna/klienci/<%= clientC._id %>/<%= task._id %>/<%= protocols %>" class="prot" title="<%= protocols %>">
+                                        <img src="/files-icon/pdf.png" alt="<%= protocols %>" width="27" height="32"><br>
+                                        <span><%= protocols %></span>
+                                    </a>
+                                <% }) %> 
+                            </div>
+
+                        </div>
+                    </details>
+                    <% counterTaskDay++ %>
+                <% }) %>                                                       
+            <% } else { %>
+                    <div class="noTasks">
+                        <label>Brak usług do wyświetlenia!</label>
+                    </div>
+            <% } %> 
+        </div>
+        </div>
+
+        <div class="twoWeeksInsp">
+            <h3>Powiadomienia o następnym <span class="span-h3">przeglądzie/wykonaniu</span> <span class="span-h3">telefonu</span> 2 <span class="span-h3">tygodnie</span> <span class="span-h3">do</span> <span class="span-h3">przodu:</span></h3>
+            <% if(taskInspection.length> 0) { %>
+
+                <% var dataTaskService = '' %> 
+                <% var counter=1 %>
+                <% var counterTaskDay = 1 %> 
+                <% taskInspection.forEach(task=> { %>
+                    <% var clientC %>
+                    <% clients.every(client=> { %>
+                        <% if(client._id==task.clientId){ %>
+                            <% clientC=client %>
+                            <% return false %>
+                        <% } %>
+                        <% return true %>
+                    <% }) %>
+                    <% if(moment(task.DateNextInspection).format('YYYY-MM-DD') != dataTaskService) { %> 
+                        <div class="main-date">
+                            <label class="letter-day"><%= moment(task.DateNextInspection).lang('pl').format('dddd') %> |</label>
+                            <label><%= moment(task.DateNextInspection).lang('pl').format('DD') %></label>
+                            <label><%= moment(task.DateNextInspection).lang('pl').format('MMMM') %></label>
+                        </div>
+                        <% counterTaskDay = 1 %> 
+                    <% } %> 
+                    <% dataTaskService = moment(task.DateNextInspection).format('YYYY-MM-DD') %>
+                    
+                    <div class="inspection">
+                    <details>
+                    <summary>
+                        <div class="letters_to_center">
+                            <div class="letters">
+                                <label class="letters_label"><span><%= moment(task.DateNextInspection).format('HH:mm') %></span></label>
+                                <label><span><%= moment(task.DateNextInspection).format('YYYY-MM-DD') %></span></label>
+                            </div>
+                        </div>
+
+                        <div class="summary-data">
+                            <label><span><%= counterTaskDay %>. Przegląd</span></label><br>
+                            <label class="dateInspection"><span><%= moment(task.DateNextInspection).format('YYYY-MM-DD') %></span></label>
+                            <label class="summary-data-client">Klient: <span><%= clientC.name %> <%= clientC.lastName %></span></label>
+                            <label>Usługa: <span><%= task.nameOfService %></span></label>
+                            <label>Telefon: <span><%= clientC.phone %></span></label>
+                            <% if(counter<3){ %>
+                                <label>| </label>
+                                <label class="clockInspection"></label>
+                            <% } %>
+                            <% if(task.yesNo === 'nie'){ %>
+                                <form action="/strona_glowna/serwis/<%= counter %>/<%= task._id %>" method="POST" enctype="multipart/form-data">
+                                    <label>Zadzwoniłeś/łaś?</label>
+                                    <input type="radio" class="checkPhone" name="phone<%= counter %>" value="tak" onclick="checkedRadio()"><label>tak</label>
+                                    <input type="radio" class="checkPhone" name="phone<%= counter %>" value="nie" onclick="checkedRadio()" checked><label>nie</label>
+                                    <button>Zapisz odp.</button>
+                                </form>
+                            <% } else { %>
+                                <form action="/strona_glowna/serwis/<%= counter %>/<%= task._id %>" method="POST" enctype="multipart/form-data">
+                                    <label>Zadzwoniłeś/łaś?</label>
+                                    <input type="radio" class="checkPhone" name="phone<%= counter %>" value="tak" onclick="checkedRadio()" checked><label>tak</label>
+                                    <input type="radio" class="checkPhone" name="phone<%= counter %>" value="nie" onclick="checkedRadio()"><label>nie</label>
+                                    <button>Zapisz odp.</button>
+                                </form>
+                            <% } %>
+                        </div>
+                    </summary>
+                    <br>
+                        <div class="longTasksAndClient">
+                            <div class="clientDataOne">
+                                <label>Data wykonania: <span><%= moment(task.dateOfService).format('YYYY-MM-DD/HH:mm') %></span></label><br>
+                                <label>Imię: <span><%= clientC.name %></span></label><br>
+                                <label>Nazwisko: <span><%= clientC.lastName %></span></label><br>
+                                <label>Adres: <span><%= clientC.address %></span></label><br>
+                                <label>Telefon: <span><%= clientC.phone %></span></label><br>
+                                <label>E-mail: <span><%= clientC.email %></span></label><br>
+                            </div>
+
+                            <div class="taskDataOne">
+                                <br>
+                                <label>Id: <span><%= task._id %></span> </label><br>
+                                <label>Nazwa usługi: <span><%= task.nameOfService %></span> </label><br>
+                                <label>Miejsce montażu: <span><%= task.placeOfAssembly %></span> </label><br>
+                                <label>Data i godzina rozpoczęcia zaplanowanej usługi: <span><% if(moment(task.dateOfService).format('YYYY-MM-DD | HH:mm') !== 'Invalid date'){ %> <%= moment(task.dateOfService).format('YYYY-MM-DD | HH:mm') %> <% } %></span></label><br>
+                                <label>Data montażu: <span><% if(moment(task.dateOfAssembly).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.dateOfAssembly).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Data gwarancji: <span><% if(moment(task.warrantyDate).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.warrantyDate).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Data następnego przeglądu: <span><% if(moment(task.DateNextInspection).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.DateNextInspection).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Data pierwszego uruchomienia urządzenia: <span><% if(moment(task.firstLaunchDate).format('YYYY-MM-DD') !== 'Invalid date'){ %> <%= moment(task.firstLaunchDate).format('YYYY-MM-DD') %> <% } %></span></label><br>
+                                <label>Jaka czynność ma być/była wykonywana:<br> <span><%= task.performedActivity %></span></label><br>
+                                <label>Podaj datę i godzinę wykonania czynności: <span><% if(moment(task.dateTime).format('YYYY-MM-DD | HH:mm') !== 'Invalid date'){ %> <%= moment(task.dateTime).format('YYYY-MM-DD | HH:mm') %> <% } %></span></label><br>
+                                <label>Zamontowane urządzenia/części: <br> <span><%= task.mountedDevices %></span></label><br><br>
+                                <label>Faktura za wykonanie zlecenia:</label><br><br>
+                                <% task.invoice.forEach(inv => { %>
+                                    <a href="/strona_glowna/klienci/<%= clientC._id %>/<%= task._id %>/<%= inv %>" class="inv" title="<%= inv %>">
+                                        <img src="/files-icon/pdf.png" alt="<%= inv %>" width="27" height="32"><br>  
+                                        <span><%= inv %></span>
+                                    </a>
+                                <% }) %> 
+                                <br><br>
+                                <label>Protokoły pogwarancyjne:</label><br><br>
+                                <% task.postWarrantyProtocols.forEach(protocols => { %>
+                                    <a href="/strona_glowna/klienci/<%= clientC._id %>/<%= task._id %>/<%= protocols %>" class="prot" title="<%= protocols %>">
+                                        <img src="/files-icon/pdf.png" alt="<%= protocols %>" width="27" height="32"><br>
+                                        <span><%= protocols %></span>
+                                    </a>
+                                <% }) %> <br><br>
+                            </div>
+                            <button class="button-add-related-task" onclick="location.href='/strona_glowna/serwis/zadanie_powiazane/<%= task._id %>'">Dodaj zadanie powiązane</button>
+                        </div>
+                        
+                    </details>
+                    </div>
+                    <% counterTaskDay++ %> 
+                    <% counter++ %>
+                <% }) %>                                                        
+            <% } else { %>
+                    <div class="noTasks">
+                        <label>Brak powiadomień do wyświetlenia!</label>
+                    </div>
+            <% } %> 
+        </div> <br><br><br>
+        <div class="service-buttons">
+        <button onclick="location.href='/strona_glowna/serwis/powiazane_uslugi'">Wypisz usługi z powiązanymi <span>zadaniami</span></button>
+        <button onclick="location.href='/strona_glowna/serwis/wszystkie_uslugi'">Wypisz wszystkie usługi</button>
+        </div>
+    </div><br><br><br><br><br>
+        <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

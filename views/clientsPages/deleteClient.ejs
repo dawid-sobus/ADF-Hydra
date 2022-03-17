@@ -1,0 +1,21 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <div class="delete-client-outside">
+        <div class="delete-client">
+            <h1>Usuń element!</h1>
+            <h3>Usunięty zostanie klient wraz ze wszystkimi danymi oraz usługami, plikami wprowadzonymi przez użytkownika.</h3>
+            <h2>Czy na pewno chcesz usunąć tego klienta? </h2>
+
+            <div class="delete-clients-buttons">
+                <button class="delete" data-doc="<%= element._id %>">Tak</button>
+                <button onclick="location.href='/strona_glowna/klienci/<%= element._id %>'">Nie</button>
+            </div>
+        </div>
+    </div><br><br><br><br>
+
+    <script src="/js/jsClientsPages/jsDeleteClient.js"></script>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,3791 @@
+body{
+    margin: 0;
+    background-image: url(img/tlo.jpg);
+    background-size:contain;
+    width: 100%;
+    min-width: 236px;
+}
+.menu{
+    text-align: center;
+    background-color: #333; 
+    border-radius: 5px;
+}
+.menu a{
+    color: #fff;
+    text-decoration: none;
+}
+.menu a h1{
+    padding: 25px;
+    font-size: 45px;
+    margin: 0;
+}
+.menu a h1 span{
+    color: #EBEBEB;
+    box-shadow: 3px 3px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 0 20px 0 20px;
+    background-color: #808080;
+    padding: 8px;
+}
+.menu a:hover h1 span{
+    background-color: #0000cc;
+}
+nav{
+    background-color: rgba(51, 51, 51, 0.7);
+    border-radius: 0 0 12px 12px;
+}
+nav ul{
+    display: flex; /*ułożenie elementów liniowo*/
+    padding: 10px 5px 15px 5px;
+    flex-wrap: wrap;
+    border-bottom: 4px solid #A0A0A0;
+    margin: 0 10px;
+}
+nav li{
+    list-style-type: none; /*usuwa kropki*/
+    margin: 18px 1vw 15px 1vw;
+}
+nav ul li a{
+    text-decoration: none;
+    padding: 7px 15px;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 14px;
+    border: 3px solid #A0A0A0;
+    letter-spacing: 1px;
+}
+nav ul li a:hover{
+    background-color: #EBEBEB;
+    color: #202020;
+    border-radius: 3px solid #606060;
+}
+nav{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+nav .dropdownOutside .dropdown .dropdownMenu, nav .dropdownOutside .dropdown .loginOut-button-phone{
+    display: none;
+}
+nav .a-nav{
+    padding: 3px 10px 3px 10px;
+    background-color: #C0C0C0;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    font-size: 17px;
+}
+nav ul .button-log-out{
+    display: flex;
+    margin-right: 0;
+    margin-left: auto;
+}
+nav ul li label{
+    font-size: 16px;
+}
+nav ul li button{
+    background-color: #C0C0C0;
+    border-radius: 12px;
+    font-size: 12px;
+    border: 2px solid #808080;
+    padding: 7px 15px;
+    font-weight: bold;
+    margin-top: -20px;
+}
+nav ul li button:hover{
+    background-color: #606060;
+    border: 2px solid #E0E0E0;
+    color: #E0E0E0;
+    cursor: pointer;
+}
+footer{
+    background-color: #333;
+    color: #EBEBEB;
+    padding: 17px 17px;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+}
+
+@media only screen and (max-width: 820px) {
+    .menu a h1{
+        font-size: 40px;
+    }
+    nav ul li a{
+        padding: 6px 10px;
+        font-size: 14px;
+        border: 2px solid #A0A0A0;
+    }
+    nav .a-nav{
+        font-size: 14px;
+    }
+    nav ul li button{
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    footer{
+        font-size: 13px;
+    } 
+}
+
+@media only screen and (max-width: 735px) {
+    
+    /*menu na telefon*/
+    nav .dropdownOutside{
+        text-align: right;
+        margin: 0 1vw;
+        border-bottom: 4px solid #A0A0A0;
+    }
+    nav .dropdownOutside .dropdown{
+        padding-right: 2vw;
+        width: 185px;
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    nav .dropdownOutside .dropdown .dropdownMenu{
+        font-size: 15px;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        display: inline-block;
+        width: 60px;
+        text-align: center;
+        padding-bottom: 15px;
+        padding-top: 6px;
+    }
+    nav .dropdownOutside .dropdown .dropdownMenu span{
+        font-size: 30px;
+        letter-spacing: 4px;
+        display: inline-block;
+    }
+    nav .dropdownOutside .dropdown .dropdownMenu:hover{
+        text-decoration: underline;
+    }
+    nav .dropdownOutside .dropdown .loginOut-button-phone{
+        background-color: violet;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 28px;
+        margin-right: 10px;
+    }
+    nav .dropdownOutside .dropdown .loginOut-button-phone .a-nav1{
+        padding: 3px 10px 3px 10px;
+        background-color: #C0C0C0;
+        border-radius: 5px;
+        text-decoration: none;
+        border: none;
+        color: black;
+        font-size: 15px;
+    }
+    nav .dropdownOutside .dropdown .loginOut-button-phone .a-nav1:hover{
+        background-color: #EBEBEB;
+        color: #202020;
+    }
+    /*koniec menu na telefon*/
+
+    nav ul{
+        display: none;
+        width: 197px;
+        background-color: #4F4E55;
+        border-bottom: none;
+        position: absolute;
+        margin: -6px 10px 0 0;
+        padding: 0;
+        border-radius: 4px 4px 10px 10px;
+    }
+    nav a:focus + ul, nav a:hover + ul, nav ul:hover{
+        display: block;
+    }
+    nav li{
+        text-align: center;
+        width: 100%;
+        padding: 0;
+        margin: 5px 0 0 0;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+        border: none;
+        letter-spacing: 1px;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        padding: 13px 0;
+        margin: 0;
+        display: inline-block;
+    }
+    nav ul li a:hover{
+        background-color: #EBEBEB;
+        color: #202020;
+    }
+    nav ul .button-log-out{
+        display: block;
+    }
+    nav .a-nav{
+        display: none;
+    }
+    nav ul .button-log-out button{
+        width: 100%;
+        padding: 13px 0;
+        border-radius: 0;
+        margin-top: 5px;
+        border-radius: 0px 0px 10px 10px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .menu a h1{
+        font-size: 30px;
+    }
+}
+
+/* LOGIN PAGE */ /* REGISTER PAGE */
+
+.adfHydra {
+    text-align: center;
+    background-color: #333;
+    padding: 80px 30px 10px 30px;
+    color: #fff;
+    font-size: 50px;
+    margin-bottom: 0;
+}
+.adfHydra span{
+    color: #EBEBEB;
+    box-shadow: 3px 3px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 0 20px 0 20px;
+    background-color: #808080;
+    padding: 8px;
+}
+.adfHydra:hover span{
+    background-color: #0000cc;
+}
+.log-outside, .register-outside{
+    width: 100%;
+    min-height: calc(100vh - 150px - 100px);
+    background-color: #333;
+    padding: 50px 0;
+}
+.log, .register {
+    width: 435px;
+    margin: 0 auto;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #707070, #969696);
+    border-radius: 10px;
+    padding: 32px 20px;
+    box-shadow: 0px 0px 30px 30px rgba(0, 0, 0, 0.3);
+}
+.log h2, .register h2{
+    font-size: 25px;
+}
+.log input, .register input{
+    font-size: 15px;
+    border-radius: 7px;
+    margin: 10px;
+    border: 2px solid #606060;
+    padding: 5px;
+}
+.log input:focus, .register input:focus{
+    border: 2px solid #202020;
+}
+.log label, .register label{
+    font-size: 14px;
+}
+
+.log .login-button, .register .register-button{
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    font-size: 15px;
+    border: 2px solid #808080;
+    padding: 7px 20px;
+    font-weight: bold;
+    margin-block-end: 10px;
+}
+.log .login-button:hover, .register .register-button:hover{
+    background-color: #606060;
+    cursor: pointer;
+    color: #FFFFFF;
+    border: 2px solid #404040;
+}
+.log .register-button, .register .login-button{
+    margin-top: 20px;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    font-size: 17px;
+    border: 3px solid #A0A0A0;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+.log .register-button:hover, .register .login-button:hover{
+    background-color: #808080;
+    cursor: pointer;
+    color: #FFFFFF;
+    border: 3px solid #606060;
+}
+
+/* REGISTER PAGE */
+
+.register .gender-option{
+    font-size: 17px;
+}
+.register input[type="radio"]{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.register .selectData{
+    font-size: 15px;
+}
+.register select{
+    font-size: 15px;
+    border-radius: 6px;
+    margin: 10px;
+    border: 2px solid #606060;
+    padding: 5px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+    .adfHydra {
+        padding: 50px 30px 10px 30px;
+        font-size: 35px;
+    }
+    .log, .register {
+        width: auto;
+        margin: 0 10px;
+    }
+    .log h2, .register h2{
+        font-size: 20px;
+    }
+    .log input, .register input{
+        font-size: 13px;
+    }
+    .log label, .register label{
+        font-size: 13px;
+    }  
+    .log .login-button, .register .register-button{
+        font-size: 14px;
+    }
+    .log .register-button, .register .login-button{
+        font-size: 15px;
+    }
+    /* REGISTER PAGE */
+
+    .register .gender-option{
+        font-size: 15px;
+    }
+    .register input[type="radio"]{
+        width: 14px;
+        height: 14px;
+    }
+    .register .selectData{
+        font-size: 13px;
+    }
+    .register select{
+        font-size: 11px;
+        margin: 2px;
+        padding: 3px;
+        cursor: pointer;
+    }
+}
+@media only screen and (max-width: 262px) {
+    .log, .register {
+        margin: 0 5px;
+    }
+}
+
+/*HOME PAGE*/ /*VIEW CLIENTS*/
+
+.home-page-outside{
+    min-height: calc(100vh - 521px);
+    width: 100%;
+    word-break: break-all;
+    text-align: center;
+}
+.home-page{
+    display: flex;
+    justify-content: center;
+}
+.homeh2{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 80px;
+    padding-top: 30px;
+}
+.homeh2 h2{
+    width: 300px;
+    margin: 0 auto;
+    border: 3px solid #A0A0A0;
+    border-radius: 20px;
+    padding: 10px;
+    color: #E0E0E0;
+}
+.home-buttons{
+    text-align: center;
+    width: 465px;
+}
+.home-buttons button{
+    font-size: 18px;
+    padding: 15px;
+    margin: 10px;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    background-color: #E0E0E0;
+    border: 2px solid #000000;
+    box-shadow: 15px 13px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.home-buttons button:hover{
+    background-color: #E0E0E0;
+    box-shadow: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.home-page-tasks{
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-right: 5%;
+    width: 900px;
+    text-align: left;
+}
+.noTasks{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 40px;
+}
+.home-page-tasks h4{
+    font-size: 18px;
+}
+.home-page-tasks .main-hour{
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+.home-page-tasks .main-hour span{
+    font-weight: bold;
+    background-color: #606060;
+    color: #E0E0E0;
+    padding: 5px;
+    border-radius: 10px;
+}
+.home-page-tasks .service-counter{
+    font-size: 13.5px;
+    font-weight: bold;
+}
+.home-page-tasks span{
+    display: inline-block;
+    font-weight: bold;
+}
+.home-page-tasks summary{
+    border: 2px dashed #404040;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    background-color: #EBEBEB;
+}
+.home-page-tasks summary:hover{
+    cursor: pointer;
+}
+.home-page-tasks .letters{
+    display: inline-block;
+    vertical-align:top;
+    padding: 0 7px 10px 0;
+}
+.home-page-tasks .letters img{
+    border-radius: 15px;
+}
+.home-page-tasks .summary-data{
+    display: inline-block;
+    vertical-align:top;
+    max-width: 83%;
+}
+.longClientsTask{
+    background-color: #fff;
+    border-bottom: 2px dashed #404040;
+    border-left: 2px dashed #404040;
+    border-right: 2px dashed #404040;
+    border-radius: 0 0 10px 10px;
+    font-size: 13.5px;
+}
+.longClientsTask .clientData{
+    display: inline-block;
+    vertical-align:top;
+    padding: 0 10px;
+    max-width: 34%;
+}
+.longClientsTask .taskData{
+    display: inline-block;
+    vertical-align:top;
+    padding: 0 10px;
+    border-left: 3px solid #404040;
+    margin-bottom: 2px;
+    max-width: 50%;
+}
+.longClientsTask .taskData a{
+    display: inline-block;
+    vertical-align: top;
+    width: 120px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    text-align: center;
+}
+.longClientsTask .taskData a span{
+    font-weight: normal;
+    border: 3px solid #707070;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #969696;
+    margin-top: 7px;
+}
+.longClientsTask .taskData a:hover span{
+    border: 3px solid #202020;
+}
+
+@media only screen and (max-width: 956px) {
+    .home-page{
+        display: block;    
+    }
+    .home-buttons{
+        width: auto;
+    }
+    .home-buttons button{
+        font-size: 17px;
+        padding: 12px;
+        margin: -50px 1% 40px 1%;
+        letter-spacing: 1px;
+    }
+    .home-page-tasks{
+        margin-right: 3%;
+        margin-left: 3%;
+        width: auto;
+    }
+    .home-page-tasks .summary-data{
+        max-width: 76%;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .homeh2{
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+    .homeh2 h2{
+        width: 200px;
+        border: 2px solid #A0A0A0;
+        border-radius: 15px;
+        padding: 6px;
+    }
+    .home-buttons{
+        margin-left: 1px;
+    }
+    .home-buttons button{
+        font-size: 13px;
+        padding: 10px;
+        margin: 0 1px 10px 1px;
+        letter-spacing: 0.5px;
+    }
+    .home-page-outside{
+        min-height: calc(100vh - 441px);
+    }
+    .home-page-tasks{
+        padding: 10px 10px;
+        border-radius: 15px;
+
+        margin: 20px 1vw 0 1vw;
+        width: auto;
+    }
+    .noTasks{
+        font-size: 13px;
+        margin-top: 20px;
+    }
+    .home-page-tasks h4{
+        font-size: 14px;
+        margin: 0;
+        margin-top: 10px;
+    }
+    .home-page-tasks .main-hour{
+        font-size: 14px;
+        margin: 10px 0;
+    }
+    .home-page-tasks .main-hour span{
+        padding: 4px;
+        border-radius: 8px;
+    }
+    .home-page-tasks .service-counter{
+        font-size: 13px;
+    }
+    .home-page-tasks summary{
+        padding: 6px;
+        font-size: 13px;
+        border-radius: 9px;
+    }
+    .home-page-tasks .summary-data{
+        max-width: 73%;
+    }
+    .longClientsTask{
+        font-size: 13px;
+    }
+    .longClientsTask .taskData{
+        border-left: 2px solid #404040;
+    }
+    .longClientsTask .clientData, .longClientsTask .taskData{
+        padding: 0 6px;
+    }
+    .longClientsTask .taskData a img{
+        width: 25px;
+        height: 30px;
+    }
+}
+@media only screen and (max-width: 328px) {
+    .home-page-tasks .letters{
+        padding: 0 0 5px 0;
+        text-align: center;
+        width: 90%;
+    }
+    .home-page-tasks .letters img{
+        border-radius: 10px;
+        width: 55px;
+        height: 40px;
+        margin: 0 auto;
+    }
+    .home-page-tasks .summary-data{
+        max-width: none;
+    }
+    .longClientsTask .clientData{
+        max-width: none;
+    }
+    .longClientsTask .taskData{
+        margin-top: 14px;
+        border-top: 5px double #404040;
+        border-left: none;
+        max-width: none;
+    }
+}
+
+/*VIEW CLIENTS*/ /*DETAILS CLIENTS TASKS*/
+
+.clientsh2{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+.clientsh2 h2{
+    width: 300px;
+    margin: 0 auto;
+    border: 3px solid #A0A0A0;
+    border-radius: 20px;
+    padding: 10px;
+    color: #fff;
+}
+.clientsh2 .search-clients{
+    font-size: 15px;
+    padding: 7px;
+    border-radius: 15px;
+    border: 3px solid #404040;
+    background-color: #E0E0E0;
+    width: 50%;
+    letter-spacing: 1px;
+    margin: 30px 0;
+    color: #333;
+}
+.clientsh2 .search-clients:focus{
+    border: 3px solid black;
+    background-color: #FFFFFF;
+}
+.clientsOutside{
+    min-height: calc(100vh - 670px);
+    word-break: break-all;
+    width: 100%;
+}
+.clients{
+    background-color: #fff;
+    border: 10px double #333;
+    padding: 40px;
+    margin: 0 20%;
+    border-radius: 20px;
+    font-size: 13.5px;
+}
+.clients .noTasks{
+    text-align: center;
+    margin-top: 0;
+}
+.clients .noTasks label{
+    font-size: 20px;
+}
+.clients summary{
+    margin-bottom: 15px;
+    border: 2px solid #404040;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #EBEBEB;
+}
+.clients summary:hover{
+    cursor: pointer;
+}
+.clients .letters{
+    display: inline-block;
+    vertical-align:top;
+    padding: 0 7px 10px 0;
+}
+.clients .letters img{
+    border-radius: 15px;
+}
+.clients .summary-data{
+    display: inline-block;
+    vertical-align:top;
+    max-width: 83%;
+}
+.longClients{
+    border-left: 2px solid #404040;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 15px;
+}
+.clientData1{
+    display: inline-block;
+    vertical-align:top;
+    border-right: 4px solid #606060;
+    padding: 10px 40px 20px 40px;
+    margin-bottom: 5px;
+    max-width: 25%;
+}
+.clientData2{
+    display: inline-block;
+    vertical-align:top;
+    padding: 10px 40px 20px 40px;
+    margin-bottom: 5px;
+    max-width: 40%;
+}
+.longClients a{
+    display: block;
+    padding: 10px 40px;
+    text-decoration: none;
+    background-color: #606060;
+    font-size: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 0 0 6px 7px;
+}
+.longClients a:hover{
+    background-color: #404040;
+}
+.client span{
+    font-weight: bold;
+    display: inline-block;
+}
+.client-button{
+    width: 100%;
+    text-align: center;
+}
+.client-button .addCustomers-button{
+    font-size: 15px;
+    padding: 12px;
+    margin: 15px;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    background-color: #E0E0E0;
+    border: 2px solid #000000;
+    box-shadow: 15px 13px 10px 0 rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    width: 130px;
+}
+.client-button .addCustomers-button:hover{
+    background-color: #E0E0E0;
+    box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 970px) {
+
+    .clientsh2 .search-clients{
+        width: 70%;
+    }
+    .clients{
+        margin: 0 10%;
+    }
+    .clients .summary-data{
+        max-width: 75%;
+    }
+}
+@media only screen and (max-width: 728px) {
+    .clientsh2 .search-clients{
+        width: 80%;
+    }
+    .clientsOutside{
+        min-height: calc(100vh - 648px);
+    }
+    .clients{
+        padding: 20px;
+        margin: 0 2%;
+    }
+    .clientData1{
+        padding: 10px 20px 20px 20px;
+        max-width: 25%;
+    }
+    .clientData2{
+        padding: 10px 20px 20px 20px;
+        max-width: 45%;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .clientsh2{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .clientsh2 h2{
+        width: 200px;
+        border: 2px solid #A0A0A0;
+        border-radius: 15px;
+        padding: 6px;
+    }
+    .clientsh2 .search-clients{
+        font-size: 13px;
+        padding: 5px;
+        border-radius: 12px;
+        border: 2px solid #404040;
+        width: 80%;
+        letter-spacing: 0.5px;
+    }
+    .clientsOutside{
+        min-height: calc(100vh - 573px);
+    }
+    .clients{
+        border: 6px double #333;
+        padding: 10px;
+        margin: 0 1%;
+        border-radius: 17px;
+        font-size: 13px;
+    }
+    .clients .summary-data{
+        max-width: 73%;
+    }
+    .clients .noTasks label{
+        font-size: 13px;
+    }
+    .clients summary{
+        margin-bottom: 13px;
+        padding: 6px;
+        border-radius: 9px;
+    }
+    .clients .summary-data{
+        max-width: 71%;
+    }
+    .clientData1{
+        border-right: 2px solid #606060;
+        padding: 10px 8px 15px 8px;
+        max-width: 25%;
+    }
+    .clientData2{
+        padding: 10px 8px 15px 8px;
+        margin-bottom: 0px;
+        max-width: 47%;
+    }
+    .longClients a{
+        font-size: 15px;
+    }
+    .client-button .addCustomers-button{
+        font-size: 13px;
+        padding: 10px;
+        margin: 0px;
+        letter-spacing: 0.5px;
+        margin-top: 15px;
+    }
+}
+@media only screen and (max-width: 328px) {
+    .clients .letters{
+        padding: 0 0 5px 0;
+        text-align: center;
+        width: 90%;
+    }
+    .clients .letters img{
+        border-radius: 10px;
+        width: 55px;
+        height: 40px;
+        margin: 0 auto;
+    }
+    .clients .summary-data{
+        max-width: none;
+    }
+    .clientData1{
+        display: block;
+        border-right: none;
+        border-bottom: 3px dashed #606060;
+        max-width: none;
+        text-align: center;
+    }
+    .clientData2{
+        display: block;
+        max-width: none;
+        text-align: center;
+    }
+    .longClients a{
+        font-size: 14px;
+    }
+}
+
+/*DETAILS CLIENTS TASKS*/ /*ADD TASK*/
+
+.details-clients-tasks{
+    min-height: calc(100vh - 370px);
+    width: 100%;
+    word-break: break-all;
+}
+.search-items{
+    padding: 10px 40px 10px 40px;
+    margin-top: 20px;
+    text-align: center;
+}
+.search-items .search-select{
+    display: inline-block;
+    width: 250px;
+}
+.search-items .search-input{
+    display: inline-block;
+    width: 30%;
+}
+.search-items .search-details{
+    font-size: 13px;
+    padding: 6px;
+    border-radius: 17px;
+    border: 3px solid #606060;
+    background-color: #E0E0E0;
+    width: 100%;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.search-items .search-details:focus{
+    border: 3px solid #404040;
+    background-color: #FFFFFF;
+}
+.search-items h3{
+    font-size: 17px;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+.search-items select{
+    font-size: 13px;
+    padding: 2px;
+    border-radius: 6px;
+    border: 3px solid #606060;
+    background-color: #FFFFFF;
+    margin: 0;
+}
+.search-items select:hover{
+cursor: pointer;
+}
+.search-items button{
+    font-size: 13px;
+    padding: 2px 9px;
+    border-radius: 6px;
+    border: 2px solid #202020;
+    margin: 0;
+}
+.search-items button:hover{
+    cursor: pointer;
+}
+.clients-button{
+    margin: 40px 22% 15px 22%;
+}
+.clients-button button{
+    font-size: 13px;
+    margin-left: 30px;
+    padding: 6px;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    border: 2px solid #404040;
+}
+.clients-button button:hover{
+    background-color: #969696;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.data-client-outside{
+    background-color: #fff;
+    border: 10px double #333;
+    padding: 8px 20px 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 22% 10px 22%;
+}
+.data-client-outside h3{
+    font-size: 18px;
+}
+.data-client-outside .data-client1{
+    display: inline-block;
+    vertical-align:top;
+    padding: 10px 40px 20px 40px;
+    text-align: left;
+    max-width: 25%;
+}
+.data-client-outside .data-client2{
+    display: inline-block;
+    vertical-align:top;
+    text-align: left;
+    max-width: 40%;
+    border-left: 4px solid #606060;
+    padding: 10px 40px 20px 40px;
+}
+.data-client-outside span{
+    font-weight: bold;
+    display: inline-block;
+}
+.tasks-details{
+    background-color: #fff;
+    border: 10px double #333;
+    padding: 40px;
+    margin-left: 22%;
+    margin-right: 22%;
+    border-radius: 20px;
+    font-size: 13.5px;
+}
+.tasks-details .main-date{
+    background-color: #606060;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 2px;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    border: 2px solid #202020;
+    border-radius: 10px 10px 0px 0px;
+    margin: 0 30%;
+    font-size: 14px;
+}
+.tasks-details h3{
+    text-align: center;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+}
+.tasks-details summary{
+    margin-bottom: 10px;
+    border: 2px solid #404040;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #EBEBEB;
+}
+.tasks-details summary:hover{
+    cursor: pointer;
+}
+.tasks-details .task .letters_to_center{
+    display: inline-block;
+    vertical-align:top;
+}
+.tasks-details .task .letters{
+    display: inline-block;
+    vertical-align:top;
+    border-radius: 15px;
+    width: 70;
+    margin: 0 7px 10px 0;
+    text-align: center;
+    padding: 15px 3px 12px 3px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    border: 2px solid #404040;
+}
+.tasks-details .task .letters .letters_label span{
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+.tasks-details .task .summary-data{
+    display: inline-block;
+    vertical-align:top;
+    max-width: 76%;
+}
+.tasks-details .longTasks{
+    background-color: #fff;
+    border-bottom: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #404040;
+    border-radius: 0 0 10px 10px;
+    padding: 0 20px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+.tasks-details .longTasks a{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 5px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    width: 150px;
+    text-align: center;
+}
+.tasks-details .longTasks a:hover span{
+    border: 2px solid #202020;
+}
+.tasks-details .longTasks a span{
+    font-weight: normal;
+    border: 2px solid #707070;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 1px;
+    background-color: #969696;
+    margin-top: 7px;
+}
+.tasks-details .task button{
+    font-size: 13px;
+    margin-left: 0.5vw;
+    padding: 4px;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    border: 2px solid #606060;
+    margin-bottom: 10px;
+}
+.tasks-details .task button:hover{
+    background-color: #808080;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.tasks-details .task span{
+    font-weight: bold;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 1030px) {
+    .search-items .search-input{
+        width: 50%;
+    }
+    .clients-button{
+        margin: 40px 10% 15px 10%;
+    }
+    .data-client-outside{
+        margin: 0 10% 10px 10%;
+    }
+    .tasks-details{
+        margin: 0 10%;
+    }
+}
+@media only screen and (max-width: 728px) {
+
+    .search-items{
+        padding: 10px 0;
+    }
+    .search-items .search-input{
+        width: 50%;
+    }
+    .search-items .search-details:focus{
+        border: 3px solid #404040;
+        background-color: #FFFFFF;
+    }
+    .clients-button{
+        margin: 40px 1% 15px 1%;
+    }
+    .data-client-outside{
+        padding: 5px 0;
+        margin: 0 1% 10px 1%;
+    }
+    .data-client-outside .data-client1{
+        padding: 10px 20px 20px 20px;
+    }
+    .data-client-outside .data-client2{
+        padding: 10px 20px 20px 20px;
+    }
+    .tasks-details .task .summary-data{
+        max-width: 67%;
+    }
+    .tasks-details{
+        padding: 20px;
+        margin: 0 1%;
+    }
+    .tasks-details .longTasks{
+        padding: 0 10px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .search-items .search-input{
+        width: 80%;
+    }
+    .search-items .search-details{
+        font-size: 12px;
+        border-radius: 15px;
+        border: 2px solid #606060;
+    }
+    .search-items .search-details:focus{
+        border: 2px solid #404040;
+    }
+    .search-items h3{
+        font-size: 15px;
+    }
+    .search-items select{
+        font-size: 12px;
+        border: 2px solid #606060;
+    }
+    .search-items button{
+        font-size: 12px;
+        padding: 3px 9px;
+    }
+    .clients-button{
+        margin: 40px 1px 15px 1px;
+    }
+    .clients-button button{
+        font-size: 12px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    .data-client-outside{
+        border: 6px double #333;
+        font-size: 13px;
+        margin: 0 1% 10px 1%;
+    }
+    .data-client-outside h3{
+        font-size: 16px;
+    }
+    .data-client-outside .data-client1{
+        padding: 10px 14px 15px 14px;
+    }
+    .data-client-outside .data-client2{
+        max-width: 47%;
+        border-left: 2px solid #606060;
+        padding: 10px 14px 15px 14px;
+    }
+    .tasks-details{
+        border: 6px double #333;
+        padding: 10px;
+        margin: 0 1%;
+        border-radius: 15px;
+        font-size: 13px;
+    }
+    .tasks-details .main-date{
+        padding: 1px;
+        margin: 0 25%;
+        font-size: 12px;
+    }
+    .tasks-details h3{
+        font-size: 15px;
+        margin: 10px 0;
+    }
+    .tasks-details summary{
+        margin-bottom: 10px;
+        padding: 6px;
+        border-radius: 9px;
+    }
+    .tasks-details .task .letters{
+        padding: 12px 2px 10px 2px;
+        letter-spacing: 0.3px;
+    }
+    .tasks-details .task .letters .letters_label span{
+        font-size: 17px;
+        padding-bottom: 7px;
+    }
+    .tasks-details .task .summary-data{
+        max-width: 60%;
+    }
+    .tasks-details .longTasks{
+        padding: 0 6px;
+        padding-bottom: 5px;
+    }
+    .tasks-details .longTasks a img{
+        width: 25px;
+        height: 30px;
+    }
+    .tasks-details .task button{
+        font-size: 12px;
+        padding: 4px;
+        border-radius: 7px;
+    }
+}
+@media only screen and (max-width: 328px) {
+
+    .tasks-details .task .letters_to_center{
+        width: 90%;
+        text-align: center;
+    }
+    .tasks-details .task .letters{
+        margin: 0 0 5px 0;
+        padding: 9px 2px 8px 2px;    
+    }
+    .tasks-details .task .letters .letters_label span{
+        padding-bottom: 5px;
+    }
+    .tasks-details .task .summary-data{
+        max-width: none;
+    }
+    .data-client-outside .data-client1{
+        display: block;
+        max-width: none;
+        text-align: center;
+        padding: 10px 2px 15px 2px;
+    }
+    .data-client-outside .data-client2{
+        display: block;
+        max-width: none;
+        border-left: none;
+        border-top: 3px dashed #606060;
+        text-align: center;
+        padding: 10px 2px 15px 2px;
+    }
+}
+
+/*ADD TASK*/ /*EDIT CLIENT*/ /*ADD RELATED TASK*/ /*EDIT TASK*/ /*EDIT FILES BUTTON*/ /*ADD CLIENT*/ /*EDIT USER PROFILE*/
+
+.add-task, .edit-client, .add-related-task, .edit-task, .edit-files, .add-client, .edit-user{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px;
+    min-height: calc(100vh - 350px);
+    width: 100%;
+}
+.add-task h2, .edit-client h2, .add-related-task h2, .edit-task h2, .edit-files h2, .add-client h2, .edit-user h2{
+    width: 300px;
+    margin: 0 auto;
+    border: 3px solid #C0C0C0;
+    border-radius: 20px;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+.add-task h3, .edit-client h3, .edit-task h3, .edit-files h3, .add-client h3, .edit-user h3{
+    text-align: center;
+    font-size: 18px;
+}
+.add-task .form-add-task, .edit-client .form-edit-client, .add-related-task .form-add-related-task, .edit-task .form-edit-task, .add-client .form-add-client, .edit-user .form-edit-user{
+    margin: 0 25%;
+    min-width: 260px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #fff, #A0A0A0);
+    border: 4px solid #606060;
+    border-radius: 15px;
+    padding: 22px 1px;
+    box-shadow: 50px 20px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.add-task .form-add-task-first, .add-related-task .form-add-related-task-first, .form-edit-task .form-edit-task-first, .add-client .form-add-client-data-client{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 5% 0 0;
+}
+.add-task .form-add-task-second, .add-related-task .form-add-related-task-second, .form-edit-task .form-edit-task-second, .add-client .form-add-client-data-task{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 0 5%;
+}
+.add-task .form-add-task input, .edit-client .form-edit-client input, .add-related-task .form-add-related-task input, .edit-task .form-edit-task input, .edit-files .form-edit-files input, .add-client .form-add-client input, .edit-user .form-edit-user input{
+    font-size: 12px;
+    border-radius: 8px;
+    margin: 7px;
+    border: 2px solid #707070;
+    padding: 4px;
+    background-color: #fff;
+}
+.add-task .form-add-task input:focus, .edit-client .form-edit-client input:focus, .add-related-task .form-add-related-task input:focus, .edit-task .form-edit-task input:focus, .edit-files .form-edit-files input:focus, .add-client .form-add-client input:focus, .edit-user .form-edit-user input:focus{
+    border: 2px solid #333;
+}
+.edit-user .form-edit-user input[type="radio"]{
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+.add-task .form-add-task label, .edit-client .form-edit-client label, .add-related-task .form-add-related-task label, .edit-task .form-edit-task label, .edit-files .form-edit-files label, .add-client .form-add-client label, .edit-user .form-edit-user label{
+    font-size: 14px;
+}
+.add-task .form-add-task button, .edit-client .form-edit-client button, .add-related-task .form-add-related-task button, .edit-task .form-edit-task button, .edit-files .form-edit-files button, .add-client .form-add-client button, .edit-user .form-edit-user button{
+    background-color: #E0E0E0;
+    border-radius: 15px;
+    font-size: 14px;
+    border: 2px solid #808080;
+    padding: 8px;
+    font-weight: bold;
+    margin-block-end: 10px;
+    letter-spacing: 0.5px;
+}
+.add-task .form-add-task button:hover, .edit-client .form-edit-client button:hover, .add-related-task .form-add-related-task button:hover, .edit-task .form-edit-task button:hover, .edit-files .form-edit-files button:hover, .add-client .form-add-client button:hover, .edit-user .form-edit-user button:hover{
+    background-color: #606060;
+    cursor: pointer;
+    color: #FFFFFF;
+    border: 2px solid #404040;
+}
+.add-task .form-add-task textarea, .add-related-task .form-add-related-task textarea, .edit-task .form-edit-task textarea, .add-client .form-add-client textarea{
+    font-size: 13px;
+    border-radius: 8px;
+    margin: 7px;
+    border: 2px solid #606060;
+    padding: 5px;
+    max-width: 240px;
+    min-width: 220px;
+    min-height: 75px;
+}
+
+@media only screen and (max-width: 1218px) {
+    .add-task .form-add-task, .edit-client .form-edit-client, .add-related-task .form-add-related-task, .edit-task .form-edit-task, .add-client .form-add-client, .edit-user .form-edit-user{
+        margin: 0 17%;
+    }
+}
+@media only screen and (max-width: 923px) {
+    .add-task .form-add-task, .edit-client .form-edit-client, .add-related-task .form-add-related-task, .edit-task .form-edit-task, .add-client .form-add-client, .edit-user .form-edit-user{
+        margin: 0 5%;
+    }
+}
+@media only screen and (max-width: 678px) {
+    .add-task h3, .edit-client h3, .edit-task h3, .edit-files h3, .add-client h3, .edit-user h3{
+        font-size: 16px;
+    }
+    .add-task .form-add-task, .edit-client .form-edit-client, .add-related-task .form-add-related-task, .edit-task .form-edit-task, .add-client .form-add-client, .edit-user .form-edit-user{
+        margin: 0 1%;
+        border: 3px solid #606060;
+    }
+    .add-task .form-add-task-first, .add-related-task .form-add-related-task-first, .form-edit-task .form-edit-task-first, .add-client .form-add-client-data-client{
+        margin: 0 0.5% 0 0;
+    }
+    .add-task .form-add-task-second, .add-related-task .form-add-related-task-second, .form-edit-task .form-edit-task-second, .add-client .form-add-client-data-task{
+        margin: 0 0 0 0.5%;
+    }
+    .add-task .form-add-task input, .edit-client .form-edit-client input, .add-related-task .form-add-related-task input, .edit-task .form-edit-task input, .edit-files .form-edit-files input, .add-client .form-add-client input, .edit-user .form-edit-user input{
+        font-size: 12px;
+        border-radius: 6px;
+        border: 1px solid #707070;
+        padding: 3px;
+    }
+    .add-task .form-add-task input:focus, .edit-client .form-edit-client input:focus, .add-related-task .form-add-related-task input:focus, .edit-task .form-edit-task input:focus, .edit-files .form-edit-files input:focus, .add-client .form-add-client input:focus, .edit-user .form-edit-user input:focus{
+        border: 1px solid #333;
+    }
+    .add-task .form-add-task label, .edit-client .form-edit-client label, .add-related-task .form-add-related-task label, .edit-task .form-edit-task label, .edit-files .form-edit-files label, .add-client .form-add-client label, .edit-user .form-edit-user label{
+        font-size: 13px;
+    }
+    .add-task .form-add-task button, .edit-client .form-edit-client button, .add-related-task .form-add-related-task button, .edit-task .form-edit-task button, .edit-files .form-edit-files button, .add-client .form-add-client button, .edit-user .form-edit-user button{
+        font-size: 13px;
+    }
+    .add-task .form-add-task textarea, .add-related-task .form-add-related-task textarea, .edit-task .form-edit-task textarea, .add-client .form-add-client textarea{
+        font-size: 12px;
+        margin: 7px 0;
+        border: 1px solid #606060;
+        padding: 3px;
+    }
+}
+@media only screen and (max-width: 539px) {
+
+    .add-task .form-add-task, .edit-client .form-edit-client, .add-related-task .form-add-related-task, .edit-task .form-edit-task, .add-client .form-add-client, .edit-user .form-edit-user{
+        display: block;
+    }
+
+    .add-task .form-add-task input, .edit-client .form-edit-client input, .add-related-task .form-add-related-task input, .edit-task .form-edit-task input, .edit-files .form-edit-files input, .add-client .form-add-client input, .edit-user .form-edit-user input{
+        font-size: 12px;
+        border-radius: 8px;
+        margin: 7px;
+        border: 2px solid #707070;
+        padding: 4px;
+    }
+    .add-task .form-add-task input:focus, .edit-client .form-edit-client input:focus, .add-related-task .form-add-related-task input:focus, .edit-task .form-edit-task input:focus, .edit-files .form-edit-files input:focus, .add-client .form-add-client input:focus, .edit-user .form-edit-user input:focus{
+        border: 2px solid #333;
+    }
+    .edit-user .form-edit-user input[type="radio"]{
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+    }
+    .add-task .form-add-task label, .edit-client .form-edit-client label, .add-related-task .form-add-related-task label, .edit-task .form-edit-task label, .edit-files .form-edit-files label, .add-client .form-add-client label, .edit-user .form-edit-user label{
+        font-size: 14px;
+    }
+    .add-task .form-add-task button, .edit-client .form-edit-client button, .add-related-task .form-add-related-task button, .edit-task .form-edit-task button, .edit-files .form-edit-files button, .add-client .form-add-client button, .edit-user .form-edit-user button{
+        background-color: #E0E0E0;
+        border-radius: 15px;
+        font-size: 14px;
+        border: 2px solid #808080;
+        padding: 8px;
+        font-weight: bold;
+        margin-block-end: 10px;
+        letter-spacing: 0.5px;
+    }
+    .add-task .form-add-task button:hover, .edit-client .form-edit-client button:hover, .add-related-task .form-add-related-task button:hover, .edit-task .form-edit-task button:hover, .edit-files .form-edit-files button:hover, .add-client .form-add-client button:hover, .edit-user .form-edit-user button:hover{
+        background-color: #606060;
+        cursor: pointer;
+        color: #FFFFFF;
+        border: 2px solid #404040;
+    }
+    .add-task .form-add-task textarea, .add-related-task .form-add-related-task textarea, .edit-task .form-edit-task textarea, .add-client .form-add-client textarea{
+        font-size: 13px;
+        border-radius: 8px;
+        margin: 7px;
+        border: 2px solid #606060;
+        padding: 5px;
+        max-width: 240px;
+        min-width: 220px;
+        min-height: 75px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .add-task, .edit-client, .add-related-task, .edit-task, .edit-files, .add-client, .edit-user{
+        font-size: 15px;
+    }
+    .add-task h2, .edit-client h2, .add-related-task h2, .edit-task h2, .edit-files h2, .add-client h2, .edit-user h2{
+        width: 200px;
+        border: 2px solid #C0C0C0;
+        border-radius: 15px;
+        padding: 6px;
+        margin-bottom: 30px;
+    }
+    .add-task .form-add-task label, .edit-client .form-edit-client label, .add-related-task .form-add-related-task label, .edit-task .form-edit-task label, .edit-files .form-edit-files label, .add-client .form-add-client label, .edit-user .form-edit-user label{
+        font-size: 13px;
+    }
+    .add-task .form-add-task, .edit-client .form-edit-client, .add-related-task .form-add-related-task, .edit-task .form-edit-task, .add-client .form-add-client, .edit-user .form-edit-user{
+        min-width: 0px;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+    }
+    .add-task .form-add-task-first, .add-related-task .form-add-related-task-first, .form-edit-task .form-edit-task-first, .add-client .form-add-client-data-client{
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+        min-width: none;
+    }
+    .add-task .form-add-task-second, .add-related-task .form-add-related-task-second, .form-edit-task .form-edit-task-second, .add-client .form-add-client-data-task{
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+        min-width: none;
+    }
+    .add-task .form-add-task input, .edit-client .form-edit-client input, .add-related-task .form-add-related-task input, .edit-task .form-edit-task input, .edit-files .form-edit-files input, .add-client .form-add-client input, .edit-user .form-edit-user input{
+        margin: 7px 0;
+    }
+    .add-task .form-add-task textarea, .add-related-task .form-add-related-task textarea, .edit-task .form-edit-task textarea, .add-client .form-add-client textarea{
+        min-width: 0px;
+    }
+    .add-task .form-add-task button, .edit-client .form-edit-client button, .add-related-task .form-add-related-task button, .edit-task .form-edit-task button, .edit-files .form-edit-files button, .add-client .form-add-client button, .edit-user .form-edit-user button{
+        margin-top: 10px;
+        font-size: 13px;
+    }
+}
+
+/* EDIT FILES */
+
+.edit-files h4{
+    text-align: center;
+    font-size: 15px;
+}
+.edit-files .edit-files-delete{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1% 50px 0;
+    min-width: 260px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #fff, #A0A0A0);
+    border: 4px solid #606060;
+    border-radius: 15px;
+    padding: 22px 5px;
+    box-shadow: 50px 20px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.edit-files .edit-invoice-protocols{
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    background-image: linear-gradient(to bottom, #fff, #A0A0A0);
+    border: 4px solid #606060;
+    border-radius: 15px;
+    padding: 22px 5px;
+    box-shadow: 50px 20px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.edit-files .edit-invoice, .edit-files .edit-protocols{
+    display: inline-block;
+    vertical-align: top;
+}
+.edit-files .back-button{
+    text-align: left;
+    margin-left: 20px;
+}
+.edit-files .back-button button{
+    background-color: #E0E0E0;
+    font-size: 15px;
+    border: 2px solid #808080;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin: -10px 0 30px 0;
+    letter-spacing: 1px;
+}
+.edit-files .back-button button:hover{
+    background-color: #C0C0C0;
+    border: 2px solid #333;
+    cursor: pointer;
+}
+.edit-files .edit-invoice-protocols button{
+    vertical-align: top;
+    display: inline-block;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    font-size: 11px;
+    border: 2px solid #808080;
+    padding: 5px;
+    font-weight: bold;
+    margin: 6px 60px 6px 5px;
+    text-align: center;
+}
+.edit-files .edit-invoice-protocols button:hover{
+    background-color: #A0A0A0;
+    cursor: pointer;
+    color: #FFFFFF;
+    border: 2px solid #404040;
+}
+.edit-files .edit-invoice-protocols a{
+    display: inline-block;
+    vertical-align: top;
+    /* background-color: #E0E0E0; */
+    /* padding: 3px; */
+    margin-left: 10px;
+    /* border-radius: 5px; */
+    text-decoration: none;
+    /* color: #404040; */
+    /* border: 2px solid #606060; */
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    width: 120px;
+}
+.edit-files .edit-invoice-protocols a span{
+    display: block;
+    font-weight: normal;
+    border: 2px solid #707070;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #969696;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.edit-files .edit-invoice-protocols a:hover span{
+    border: 2px solid #333;
+    background-color: #C0C0C0;
+}
+
+/* @media only screen and (max-width: 709px) {
+    .edit-files .edit-invoice-protocols{
+        display: block;
+        text-align: center;
+        margin: 0 1%;
+    }
+    .edit-files .edit-invoice, .edit-files .edit-protocols{
+        display: block;
+    }
+} */
+@media only screen and (max-width: 580px) {
+    .edit-files .edit-invoice-protocols{
+        padding: 22px 5px;
+        margin: 0 1%;
+        display: block;
+        text-align: center;
+    }
+    .edit-files .edit-invoice, .edit-files .edit-protocols{
+        display: block;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .edit-files .edit-files-delete{
+        display: block;
+        min-width: 0px;
+        border: 2px solid #606060;
+        padding: 22px 2px;
+    }
+    .edit-files .edit-invoice-protocols{
+        display: block;
+        border: 2px solid #606060;
+        padding: 22px 2px;
+    }
+    .edit-files .edit-invoice, .edit-files .edit-protocols{
+        display: block;
+    }
+    .edit-files .back-button{
+        margin-left: 2px;
+    }
+    .edit-files .back-button button{
+        font-size: 12px;
+        border: 1px solid #808080;
+        padding: 10px 20px;
+        margin: -10px 0 15px 0;
+    }
+    .edit-files .edit-invoice-protocols button{
+        border: 2px solid #808080;
+        margin: 8px 5px 8px 5px;
+    }
+    .edit-files .edit-invoice-protocols a{
+        margin-left: 2px;
+        letter-spacing: 0px;
+    }
+    .edit-files .edit-invoice-protocols a img{
+        width: 35px;
+        height: 45px;
+    }
+}
+/* @media only screen and (max-width: 340px) {
+    .edit-files .edit-invoice-protocols a{
+        display: block;
+    }
+} */
+@media only screen and (max-width: 270px) {
+    .edit-files .edit-files-delete input{
+        font-size: 11px;
+    }
+    .edit-files .edit-files-delete button{
+        font-size: 12px;
+    }
+    .edit-files .edit-invoice-protocols a{
+        padding: 3px 1px;
+        font-size: 12px;
+    }
+}
+
+/*DELETE CLIENT*/ /*DELETE FILES*/ /*DELETE TASK*/
+
+.delete-client-outside, .delete-files-outside, .delete-task-outside, .delete-user-outside{
+    min-height: calc(100vh - 385px);
+    width: 100%;
+}
+.delete-client, .delete-files, .delete-task, .delete-user{
+    background-color: #E0E0E0;
+    margin-left: 26%;
+    margin-right: 26%;
+    border-radius: 25px;
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+.delete-client h1, .delete-files h1, .delete-task h1, .delete-user h1{
+    margin-top: 70px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #606060;
+    padding: 20px;
+    border-radius: 25px 25px 0 0;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.delete-client h3, .delete-files h3, .delete-task h3, .delete-user h3{
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+.delete-client h2, .delete-files h2, .delete-task h2, .delete-user h2{
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+.delete-client .delete-clients-buttons, .delete-files .delete-files-buttons, .delete-task .delete-task-buttons, .delete-user-buttons{
+    text-align: center;
+}
+.delete-client .delete-clients-buttons button, .delete-files .delete-files-buttons button, .delete-task .delete-task-buttons button, .delete-user .delete-user-buttons button{
+    text-align: center;
+    background-color: #E0E0E0;
+    border-radius: 25px;
+    font-size: 18px;
+    border: 2px solid #808080;
+    padding: 5px;
+    font-weight: bold;
+    margin-left: 2%;
+    width: 25%;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    max-width: 150px;
+    min-width: 45px;
+}
+.delete-client .delete-clients-buttons button:hover, .delete-files .delete-files-buttons button:hover, .delete-task .delete-task-buttons button:hover, .delete-user .delete-user-buttons button:hover{
+    background-color: #606060;
+    cursor: pointer;
+    color: #FFFFFF;
+    border: 2px solid #404040;
+}
+
+@media only screen and (max-width: 1100px) {
+    .delete-client, .delete-files, .delete-task, .delete-user{
+        margin: 0 20%;
+    }
+}
+@media only screen and (max-width: 880px) {
+    .delete-client, .delete-files, .delete-task, .delete-user{
+        margin: 89px 10% 0 10%;
+    }
+}
+@media only screen and (max-width: 660px) {
+    .delete-client, .delete-files, .delete-task, .delete-user{
+        margin: 89px 1% 0 1%;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .delete-client, .delete-files, .delete-task, .delete-user{
+        border-radius: 20px;
+        margin-top: 100px;
+    }
+    .delete-client h1, .delete-files h1, .delete-task h1, .delete-user h1{
+        font-size: 18px;
+        border-radius: 20px 20px 0 0;
+    }
+    .delete-client h3, .delete-files h3, .delete-task h3, .delete-user h3{
+        font-size: 13.5px;
+    }
+    .delete-client h2, .delete-files h2, .delete-task h2, .delete-user h2{
+        font-size: 15px;
+    }
+    .delete-client .delete-clients-buttons button, .delete-files .delete-files-buttons button, .delete-task .delete-task-buttons button, .delete-user .delete-user-buttons button{
+        font-size: 16px;
+    }
+}
+
+/*VIEW SERVICE*/
+
+.serviceh2{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+.serviceh2 h2{
+    width: 300px;
+    margin: 0 auto;
+    border: 3px solid #A0A0A0;
+    border-radius: 20px;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+.service{
+    min-height: calc(100vh - 370px);
+    width: 100%;
+    word-break: break-all;
+}
+.service h3{
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: 0.5px;
+    margin: 0 0 40px 0;
+}
+.service .span-h3{
+    display: inline-block;
+}
+.service .calendar-button{
+    margin: 20px 22%;
+    font-size: 17px;
+    padding: 10px;
+    width: 56%;
+    background-color: #E0E0E0;
+    border-radius: 8px;
+    border: 3px solid #404040;
+    letter-spacing: 0.7px;
+    font-weight: bold;
+}
+.service .calendar-button:hover{
+    background-color: #969696;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: 3px solid #E0E0E0;
+}
+.taskAheadBack{
+    text-align: center;
+}
+.twoWeeksAhead, .twoWeeksBack{
+    display: inline-block;
+    vertical-align: top;
+    background-color: #fff;
+    border: 10px double #333;
+    padding: 25px;
+    border-radius: 20px;
+    font-size: 13px;
+    max-height: 600px;
+    overflow: auto;
+    text-align: left;
+    max-width: 40%;
+    margin-bottom: 80px;
+    margin-top: 40px;
+}
+.twoWeeksInsp{
+    background-color: #fff;
+    border: 10px double #333;
+    padding: 25px;
+    margin-left: 22%;
+    margin-right: 22%;
+    border-radius: 20px;
+    font-size: 13px;
+    max-height: 600px;
+    overflow: auto;
+    max-width: 60%;
+}
+.twoWeeksInsp .inspection{
+    border-radius: 10px;
+}
+.twoWeeksAhead summary, .twoWeeksBack summary, .twoWeeksInsp summary{
+    border: 2px solid #404040;
+    padding: 10px;
+    border-radius: 10px;
+    background: #EBEBEB;
+    margin-bottom: 10px;
+}
+.twoWeeksAhead summary:hover, .twoWeeksBack summary:hover, .twoWeeksInsp summary:hover{
+    cursor: pointer;
+}
+.twoWeeksBack summary .service-button-back{
+    margin-top: 5px;
+    text-align: center;
+}
+.twoWeeksBack summary button, .twoWeeksInsp summary button{
+    font-size: 11.5px;
+    padding: 4px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 2px solid #404040; 
+    letter-spacing: 0.2px;   
+}
+.twoWeeksBack summary button:hover, .twoWeeksInsp summary button:hover{
+    background-color: #808080;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.service .letters_to_center{
+    display: inline-block;
+    vertical-align:top;
+}
+.service .letters_to_center .letters{
+    display: inline-block;
+    vertical-align:top;
+    border-radius: 15px;
+    width: 70;
+    margin: 0 7px 10px 0;
+    text-align: center;
+    padding: 15px 3px 12px 3px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    border: 2px solid #404040;
+}
+.service .letters_to_center .letters .letters_label span{
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+.service .summary-data{
+    display: inline-block;
+    vertical-align:top;
+    max-width: 75%;
+}
+.twoWeeksAhead .longTasksAndClient, .twoWeeksBack .longTasksAndClient, .twoWeeksInsp .longTasksAndClient{
+    border-bottom: 3px solid #404040;
+    border-left: 3px solid #404040;
+    border-right: 3px solid #404040;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 25px;
+
+}
+.twoWeeksAhead .longTasksAndClient .clientDataOne, .twoWeeksBack .longTasksAndClient .clientDataOne, .twoWeeksInsp .longTasksAndClient .clientDataOne{
+    display: inline-block;
+    vertical-align:top;
+    padding: 0 10px;
+    max-width: 34%;
+}
+.twoWeeksAhead .longTasksAndClient .taskDataOne, .twoWeeksBack .longTasksAndClient .taskDataOne, .twoWeeksInsp .longTasksAndClient .taskDataOne{
+    display: inline-block;
+    vertical-align:top;
+    padding: 0 10px;
+    border-left: 3px solid #404040;
+    margin-bottom: 2px;
+    max-width: 50%;
+}
+.twoWeeksAhead .longTasksAndClient .taskDataOne a, .twoWeeksBack .longTasksAndClient .taskDataOne a, .twoWeeksInsp .longTasksAndClient .taskDataOne a{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #969696;
+    padding: 2px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #FFFFFF;
+    border: 3px solid #707070;
+}
+.twoWeeksAhead .longTasksAndClient .taskDataOne a:hover, .twoWeeksBack .longTasksAndClient .taskDataOne a:hover, .twoWeeksInsp .longTasksAndClient .taskDataOne a:hover{
+    border: 3px solid #404040;
+}
+.twoWeeksAhead .longTasksAndClient .taskDataOne a span, .twoWeeksBack .longTasksAndClient .taskDataOne a span, .twoWeeksInsp .longTasksAndClient .taskDataOne a span{
+    padding-left: 5px;
+    max-width: 130px;
+    font-weight: normal;
+}
+.twoWeeksInsp .longTasksAndClient button{
+    display: block;
+    margin: 10px 10px 20px 30px;
+    font-size: 11.5px;
+    padding: 4px;
+    background-color: #E0E0E0;
+    border-radius: 8px;
+    border: 2px solid #404040;
+    letter-spacing: 0.2px; 
+}
+.twoWeeksInsp .longTasksAndClient button:hover{
+    background-color: #808080;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.service-buttons{
+    text-align: center;
+}
+.service-buttons button{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7px;
+    background-color: #E0E0E0;
+    border-radius: 8px;
+    border: 2px solid #404040;
+    margin: 0 5px 0 1vw;
+    color: #606060;
+    letter-spacing: 0.5px;
+}
+.service-buttons button:hover{
+    background-color: #808080;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: 2px solid #E0E0E0;
+}
+.service span{
+    font-weight: bold;
+    display: inline-block;
+}
+.service label{
+    font-size: 13.5px;
+}
+.service .noTasks{
+    font-weight: bold;
+    text-align: center;
+}
+.service .noTasks label{
+    font-size: 20px;
+}
+.service .main-date{
+    background-color: #606060;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    border: 2px solid #202020;
+    border-radius: 10px 10px 0px 0px;
+    margin: 10px 30% 0 30%;
+    font-size: 10px;
+}
+.service .main-date .letter-day{
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 7px;
+}
+
+@media only screen and (max-width: 1179px) {
+    .service .summary-data{
+        max-width: 69%;
+    }
+}
+@media only screen and (max-width: 970px) {
+
+    .service .calendar-button{
+        margin: 5px 22%;
+        padding: 7px;
+        width: 60%;
+        font-size: 15px;
+    }
+    .service h3{
+        font-size: 16px;
+        letter-spacing: 0px;
+        margin: 0 -10px 40px 0;
+    }
+    .service .summary-data{
+        max-width: 75%;
+    }
+    .twoWeeksAhead, .twoWeeksBack, .twoWeeksInsp{
+        margin: 0 auto;
+        display: block;
+        max-width: 80%;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        padding: 15px;
+    }
+    .service .main-date{
+        margin: 10px 17% 0 17%;
+    }
+    .twoWeeksAhead .longTasksAndClient .taskDataOne a span, .twoWeeksBack .longTasksAndClient .taskDataOne a span, .twoWeeksInsp .longTasksAndClient .taskDataOne a span{
+        max-width: 270px;
+    }
+    .service-buttons{
+        margin-top: -30px;
+    }
+    .service-buttons button{
+        font-size: 16px;
+        padding: 7px;
+        border-radius: 8px;
+        border: 2px solid #404040;
+        margin: 0 3px;
+        color: #606060;
+        letter-spacing: 0.5px;
+    }
+}
+@media only screen and (max-width: 587px) {
+    .service .summary-data{
+        max-width: 63%;
+    }
+    .service-buttons button{
+        font-size: 13px;
+        padding: 5px;
+        border-radius: 6px;
+        border: 2px solid #404040;
+        margin: 5px 3px;
+        letter-spacing: 0;
+    }
+    .twoWeeksAhead .longTasksAndClient .taskDataOne a span, .twoWeeksBack .longTasksAndClient .taskDataOne a span, .twoWeeksInsp .longTasksAndClient .taskDataOne a span{
+        max-width: 105px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .serviceh2{
+        font-size: 15px;
+    }
+    .serviceh2 h2{
+        width: 200px;
+        border: 2px solid #A0A0A0;
+        border-radius: 15px;
+        padding: 6px;
+        margin-bottom: 30px;
+    }
+    .service h3{
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        margin: 10px 0 40px 0;
+    }
+    .service .calendar-button{
+        margin: 5px 20%;
+        font-size: 13px;
+        border: 2px solid #404040;
+        letter-spacing: 0.3px;
+    }
+    .service .calendar-button:hover{
+        border: 2px solid #E0E0E0;
+    }
+    .twoWeeksAhead, .twoWeeksBack, .twoWeeksInsp{
+        border: 6px double #333;
+        padding: 7px;
+        border-radius: 15px;
+        font-size: 13px;
+        max-width: 85%;
+        margin-bottom: 50px;
+    }
+    .twoWeeksAhead summary, .twoWeeksBack summary, .twoWeeksInsp summary{
+        padding: 6px;
+        border-radius: 9px;
+    }
+    .twoWeeksAhead summary:hover, .twoWeeksBack summary:hover, .twoWeeksInsp summary:hover{
+        cursor: pointer;
+    }
+    .twoWeeksBack summary .service-button-back{
+        margin-top: 10px;
+    }
+    .twoWeeksBack summary button, .twoWeeksInsp summary button{
+        margin-top: 5px;
+    }
+    .service .letters_to_center .letters{
+        padding: 12px 2px 10px 2px;
+        letter-spacing: 0.3px;
+    }
+    .service .letters_to_center .letters .letters_label span{
+        font-size: 17px;
+        padding-bottom: 7px;
+    }
+    .service .summary-data{
+        max-width: 56%;
+    }
+    .twoWeeksAhead .longTasksAndClient, .twoWeeksBack .longTasksAndClient, .twoWeeksInsp .longTasksAndClient{
+        border-bottom: 2px solid #404040;
+        border-left: 2px solid #404040;
+        border-right: 2px solid #404040;
+        border-radius: 0 0 9px 9px;    
+    }
+    .twoWeeksAhead .longTasksAndClient .clientDataOne, .twoWeeksBack .longTasksAndClient .clientDataOne, .twoWeeksInsp .longTasksAndClient .clientDataOne{
+        padding: 0 4px;
+        max-width: 40%;
+    }
+    .twoWeeksAhead .longTasksAndClient .taskDataOne, .twoWeeksBack .longTasksAndClient .taskDataOne, .twoWeeksInsp .longTasksAndClient .taskDataOne{
+        padding: 0 4px;
+        border-left: 2px solid #404040;
+    }
+    .twoWeeksInsp .longTasksAndClient button{
+        margin: 10px 7px 20px 15px;
+    }
+    .service span{
+        font-weight: bold;
+        display: inline-block;
+    }
+    .service label{
+        font-size: 13px;
+    }
+    .service .noTasks label{
+        font-size: 13px;
+    }
+    .service .main-date{
+        padding: 1px;
+        letter-spacing: 0.3px;
+    }
+    .service .main-date .letter-day{
+        font-size: 12.5px;
+    }
+    .twoWeeksAhead .longTasksAndClient .taskDataOne a span, .twoWeeksBack .longTasksAndClient .taskDataOne a span, .twoWeeksInsp .longTasksAndClient .taskDataOne a span{
+        max-width: 80px;
+    }
+    .twoWeeksAhead .longTasksAndClient .taskDataOne a img, .twoWeeksBack .longTasksAndClient .taskDataOne a img, .twoWeeksInsp .longTasksAndClient .taskDataOne a img{
+        width: 25px;
+        height: 30px;
+    }
+}
+@media only screen and (max-width: 328px) {
+    .service .letters_to_center{
+        width: 90%;
+        text-align: center;
+    }
+    .service .letters_to_center .letters{
+        margin: 0 0 5px 0;
+        padding: 9px 2px 8px 2px; 
+    }
+    .service .letters_to_center .letters .letters_label span{
+        padding-bottom: 5px;
+    }
+    .service .summary-data{
+        max-width: none;
+    }
+    .twoWeeksAhead .longTasksAndClient .clientDataOne, .twoWeeksBack .longTasksAndClient .clientDataOne, .twoWeeksInsp .longTasksAndClient .clientDataOne{
+        max-width: none;
+    }
+    .twoWeeksAhead .longTasksAndClient .taskDataOne, .twoWeeksBack .longTasksAndClient .taskDataOne, .twoWeeksInsp .longTasksAndClient .taskDataOne{
+        margin-top: 14px;
+        border-top: 3px dashed #404040;
+        border-left: none;
+        max-width: none;
+    }
+    .service .main-date{
+        margin: 10px 4% 0 4%;
+    }
+    .twoWeeksAhead .longTasksAndClient .taskDataOne a span, .twoWeeksBack .longTasksAndClient .taskDataOne a span, .twoWeeksInsp .longTasksAndClient .taskDataOne a span{
+        max-width: 120px;
+    }
+}
+
+/*TASK DATA COMPLETE*/ /*RELATED TASK SERVICE*/
+
+.task-data-complete-back-button{
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.task-data-complete-back-button button{
+    background-color: #E0E0E0;
+    font-size: 15px;
+    border: 2px solid #808080;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin: -10px 0 30px 0;
+    letter-spacing: 1px;
+}
+.task-data-complete-back-button button:hover{
+    background-color: #C0C0C0;
+    border: 2px solid #333;
+    cursor: pointer;
+}
+.completeTaskh2, .addRelatedTaskh2{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+}
+.completeTaskh2 h2, .addRelatedTaskh2 h2{
+    width: 300px;
+    margin: 0 auto;
+    border: 3px solid #A0A0A0;
+    border-radius: 20px;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+.add-complete-task, .related-task-service{
+    word-break: break-all;
+    text-align: center;
+    min-height: calc(100vh - 370px);
+    width: 100%;
+}
+.add-complete-task h3, .long-client-service h3{
+    font-size: 18px;
+    text-align: center;
+}
+.complete-data-client-outside, .long-client-service{
+    background-color: #fff;
+    border: 10px double #333;
+    padding: 8px 20px 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 22% 10px 22%;
+}
+.complete-data-client-outside h3, .add-related-task-service h3{
+    font-size: 18px;
+}
+.complete-data-client-outside .data-client1, .long-client-service .data-client1{
+    display: inline-block;
+    vertical-align:top;
+    padding: 10px 40px 20px 40px;
+    text-align: left;
+    max-width: 25%;
+}
+.complete-data-client-outside .data-client2, .long-client-service .data-client2{
+    display: inline-block;
+    vertical-align:top;
+    padding: 10px 40px 20px 40px;
+    text-align: left;
+    border-left: 4px solid #606060;
+    max-width: 40%;
+}
+.complete-data-client-outside span, .long-client-service span, .form-complete-tasks label span{
+    display: inline-block;
+    font-weight: bold;
+}
+.complete-task-file h4, .complete-tasks h4{
+    width: 150px;
+    margin: 0 auto;
+    border: 3px solid #606060;
+    border-radius: 20px;
+    padding: 10px;
+    color: #202020;
+    margin-bottom: 40px;
+    font-size: 17px;
+}
+.add-complete-task h5{
+    font-size: 15px;
+    text-align: center;
+}
+.complete-tasks, .add-related-task-service{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #fff, #A0A0A0);
+    border: 4px solid #606060;
+    border-radius: 15px;
+    padding: 22px 1px;
+    box-shadow: 50px 20px 10px 0px rgba(0, 0, 0, 0.3);
+    min-width: 260px;
+}
+.complete-task-file{
+    display: inline-block;
+    vertical-align: top;
+    margin: 80px 1% 50px 0;
+    min-width: 260px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #fff, #A0A0A0);
+    border: 4px solid #606060;
+    border-radius: 15px;
+    padding: 22px 5px;
+    box-shadow: 50px 20px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.view-invoice-protocols{
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    margin-top: 80px;
+    background-image: linear-gradient(to bottom, #fff, #A0A0A0);
+    border: 4px solid #606060;
+    border-radius: 15px;
+    padding: 22px 5px;
+    box-shadow: 50px 20px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.view-invoice-protocols .view-invoice, .view-invoice-protocols .view-protocols{
+    display: inline-block;
+    vertical-align: top;
+    max-width: 340px;
+
+}
+.view-invoice-protocols a{
+    /* display: block;
+    background-color: #E0E0E0;
+    padding: 3px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #404040;
+    border: 2px solid #606060;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.3px; */
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 5px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    width: 150px;
+    text-align: center;
+}
+.view-invoice-protocols a span{
+    display: block;
+    font-weight: normal;
+    border: 2px solid #707070;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #969696;
+    margin-top: 10px;
+    font-size: 13.5px;
+}
+.view-invoice-protocols a:hover span{
+    border: 2px solid #333;
+    background-color: #C0C0C0;
+}
+.complete-tasks .complete-tasks-first, .add-related-task-service .form-add-related-task-service-first{
+    display: inline-block;
+    vertical-align: top;
+    max-width: 40%;
+    margin: 0 5% 0 0;
+}
+.complete-tasks .complete-tasks-second, .add-related-task-service .form-add-related-task-service-second{
+    display: inline-block;
+    vertical-align: top;
+    max-width: 50%;
+    margin: 0 0 0 5%;
+}
+.complete-task-file input, .complete-tasks input, .add-related-task-service input{
+    font-size: 12px;
+    border-radius: 8px;
+    margin: 7px;
+    border: 2px solid #707070;
+    padding: 4px;
+}
+.complete-task-file input:focus, .complete-tasks input:focus, .add-related-task-service input:focus{
+    border: 2px solid #333;
+}
+.complete-task-file label, .complete-tasks label, .add-related-task-service label{
+    font-size: 13.5px;
+    margin-left: 1%;
+}
+.complete-task-file button, .complete-tasks button, .add-related-task-service button{
+    background-color: #E0E0E0;
+    border-radius: 15px;
+    font-size: 14px;
+    border: 2px solid #808080;
+    padding: 8px;
+    font-weight: bold;
+    margin-block-end: 10px;
+    letter-spacing: 0.5px;
+}
+.complete-task-file button:hover, .complete-tasks button:hover, .add-related-task-service button:hover{
+    background-color: #808080;
+    cursor: pointer;
+    color: #FFFFFF;
+    border: 2px solid #404040;
+}
+.complete-tasks textarea, .add-related-task-service textarea{
+    font-size: 13px;
+    border-radius: 8px;
+    margin: 7px;
+    border: 2px solid #606060;
+    padding: 5px;
+    max-width: 240px;
+    min-width: 222px;
+    min-height: 75px;
+}
+/* .complete-tasks .view-invoice-protocols a{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #E0E0E0;
+    padding: 3px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #404040;
+    border: 2px solid #606060;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+}
+.complete-tasks .view-invoice-protocols a:hover{
+    border: 2px solid #333;
+    background-color: #C0C0C0;
+} */
+.complete-tasks .show-label{
+    font-size: 13.5px;
+    display: block;
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+}
+
+@media only screen and (max-width: 1058px) {
+    .complete-data-client-outside, .long-client-service{
+        margin: 0 10% 10px 10%;
+    }
+    .complete-tasks, .add-related-task-service{
+        margin-left: 17%;
+        margin-right: 17%;
+    }
+}
+@media only screen and (max-width: 801px) {
+    .complete-tasks, .add-related-task-service{
+        margin-left: 14%;
+        margin-right: 14%;
+        min-width: 260px;
+    }
+}
+@media only screen and (max-width: 735px) {
+    .complete-data-client-outside, .long-client-service{
+        padding: 5px 0;
+        margin: 0 1% 10px 1%;
+    }
+    .complete-data-client-outside .data-client1, .long-client-service .data-client1{
+        padding: 10px 20px 20px 20px;
+    }
+    .complete-data-client-outside .data-client2, .long-client-service .data-client2{
+        padding: 10px 20px 20px 20px;
+    }
+    .complete-tasks, .add-related-task-service{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .view-invoice-protocols{
+        display: block;
+        text-align: center;
+        margin: 0 1%;
+    }
+    .view-invoice-protocols .view-invoice, .view-invoice-protocols .view-protocols{
+        display: block;  
+        text-align: center;  
+        max-width: none;
+    }
+}
+@media only screen and (max-width: 588px) {
+    .complete-tasks, .add-related-task-service{
+        margin-left: 1%;
+        margin-right: 1%;
+        border: 3px solid #606060;
+    }
+    .complete-task-file input, .complete-tasks input, .add-related-task-service input{
+        font-size: 12px;
+        border-radius: 8px;
+        margin: 7px;
+        border: 2px solid #707070;
+        padding: 4px;
+    }
+    .complete-task-file input:focus, .complete-tasks input:focus, .add-related-task-service input:focus{
+        border: 2px solid #333;
+    }
+    .complete-task-file label, .complete-tasks label, .add-related-task-service label{
+        font-size: 13px;
+        margin-left: 1%;
+    }
+    .complete-task-file button, .complete-tasks button, .add-related-task-service button{
+        background-color: #E0E0E0;
+        border-radius: 15px;
+        font-size: 14px;
+        border: 2px solid #808080;
+        padding: 8px;
+        font-weight: bold;
+        margin-block-end: 10px;
+        letter-spacing: 0.5px;
+    }
+    .complete-task-file button:hover, .complete-tasks button:hover, .add-related-task-service button:hover{
+        background-color: #808080;
+        cursor: pointer;
+        color: #FFFFFF;
+        border: 2px solid #404040;
+    }
+    .complete-tasks textarea, .add-related-task-service textarea{
+        font-size: 13px;
+        border-radius: 8px;
+        margin: 7px;
+        border: 2px solid #606060;
+        padding: 5px;
+        max-width: 240px;
+        min-width: 222px;
+        min-height: 75px;
+    }
+    .complete-tasks .show-label{
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 539px) {
+    .complete-tasks .complete-tasks-first, .add-related-task-service .form-add-related-task-service-first{
+        display: block;
+        max-width: none;
+        margin: 0;
+    }
+    .complete-tasks .complete-tasks-second, .add-related-task-service .form-add-related-task-service-second{
+        display: block;
+        max-width: none;
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .task-data-complete-back-button{
+        margin-left: 7px;
+    }
+    .task-data-complete-back-button button{
+        font-size: 14px;
+        padding: 10px 25px;
+        margin: -10px 0 10px 0;
+    }
+    .completeTaskh2, .addRelatedTaskh2{
+        font-size: 15px;
+    }
+    .completeTaskh2 h2, .addRelatedTaskh2 h2{
+        width: 200px;
+        border: 2px solid #A0A0A0;
+    }
+    .add-complete-task h3, .long-client-service h3{
+        font-size: 15px;
+    }
+    .complete-data-client-outside, .long-client-service{
+        border: 6px double #333;
+        font-size: 13px;
+    }
+    .complete-data-client-outside h3, .add-related-task-service h3{
+        font-size: 15px;
+    }
+    .complete-data-client-outside .data-client1, .long-client-service .data-client1{
+        padding: 10px 14px 15px 14px;
+    }
+    .complete-data-client-outside .data-client2, .long-client-service .data-client2{
+        padding: 10px 14px 15px 14px;
+        border-left: 2px solid #606060;
+        max-width: 47%;
+    }
+    .complete-task-file{
+        border: 2px solid #606060;
+    }
+    .view-invoice-protocols{
+        border: 2px solid #606060;
+    }
+    .complete-task-file h4, .complete-tasks h4{
+        width: 120px;
+        border: 2px solid #606060;
+        padding: 6px;
+        margin-bottom: 30px;
+        font-size: 15px;
+    }
+    .add-complete-task h5{
+        font-size: 13.5px;
+    }
+    .complete-tasks .show-label{
+        font-size: 13px;
+    }
+    .view-invoice-protocols a img{
+        width: 35px;
+        height: 45px;
+    }
+}
+@media only screen and (max-width: 328px) {
+    .complete-tasks, .add-related-task-service{
+        min-width: 200px;
+    }
+    .complete-data-client-outside .data-client1, .long-client-service .data-client1{
+        display: block;
+        max-width: none;
+        text-align: center;
+    }
+    .complete-data-client-outside .data-client2, .long-client-service .data-client2{
+        display: block;
+        border-left: none;
+        border-top: 3px dashed #606060;
+        max-width: none;
+        text-align: center;
+    }
+    .complete-task-file{
+        margin: 80px 0 50px 0;
+        min-width: 0px;
+        border-radius: 15px;
+    }
+    .complete-task-file input, .complete-tasks input, .add-related-task-service input{
+        border-radius: 7px;
+        padding: 2px 1px;
+        max-width: 203px;
+    }
+    .complete-tasks textarea, .add-related-task-service textarea{
+        max-width: 215px;
+        min-width: 200px;
+    }
+    .view-invoice-protocols a{
+        font-size: 12px;
+    }
+    .task-data-complete-back-button button{
+        font-size: 12px;
+    }
+    .complete-task-file button, .complete-tasks button, .add-related-task-service button{
+        border-radius: 12px;
+    }
+}
+
+/*VIEW ALL TASKS*/ /*VIEW MAIN TASKS*/ /*VIEW RELATED TASK*/
+
+.allTasksh2, .mainTasksh2, .viewRelatedTasksh2{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+.allTasksh2 h2, .mainTasksh2 h2, .viewRelatedTasksh2 h2{
+    width: 300px;
+    margin: 0 auto;
+    border: 3px solid #A0A0A0;
+    border-radius: 20px;
+    padding: 10px;
+    color: #fff;
+}
+.tasks{
+    min-height: calc(100vh - 362px);
+    width: 100%;
+    word-break: break-all;
+}
+.tasks .noTasks{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.search-items-all-tasks, .search-items-main-tasks, .search-items-related-tasks-view{
+    padding: 10px 0;
+    margin-top: 20px;
+    text-align: center;
+}
+.search-items-all-tasks .search-items-all-tasks-input, .search-items-main-tasks .search-items-main-tasks-input, .search-items-related-tasks-view .search-items-related-tasks-view-input{
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+}
+.search-items-all-tasks .search-items-all-tasks-select, .search-items-main-tasks .search-items-main-tasks-select, .search-items-related-tasks-view .search-items-related-tasks-view-select{
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+}
+.search-items-all-tasks input, .search-items-main-tasks input, .search-items-related-tasks-view input{
+    font-size: 13px;
+    padding: 6px;
+    border-radius: 15px;
+    border: 3px solid #606060;
+    background-color: #E0E0E0;
+    width: 100%;
+    letter-spacing: 1px;
+}
+.search-items-all-tasks input:focus, .search-items-main-tasks input:focus, .search-items-related-tasks-view input:focus{
+    border: 3px solid #404040;
+    background-color: #FFFFFF;
+}
+.search-items-all-tasks h3, .search-items-main-tasks h3, .search-items-related-tasks-view h3{
+    font-size: 17px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin: 20px 0 25px 0;
+}
+.search-items-all-tasks select, .search-items-main-tasks select, .search-items-related-tasks-view select{
+    font-size: 13px;
+    padding: 2px;
+    border-radius: 6px;
+    border: 3px solid #606060;
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+.search-items-all-tasks select:hover, .search-items-related-tasks-view select:hover{
+    cursor: pointer;
+}
+.search-items-all-tasks button, .search-items-main-tasks button, .search-items-related-tasks-view button{
+    font-size: 13px;
+    padding: 2px 7px;
+    border-radius: 6px;
+    border: 2px solid #202020;
+    margin: 0;
+}
+.search-items-all-tasks button:hover, .search-items-main-tasks button:hover, .search-items-related-tasks-view button:hover{
+    cursor: pointer;
+}
+.tasks-details-all, .tasks-details-main, .tasks-details-related{
+    background-color: #fff;
+    padding: 40px;
+    margin-left: 22%;
+    margin-right: 22%;
+    font-size: 13.5px;
+    border: 10px double #333;
+    border-radius: 20px;
+    margin-bottom: 80px;
+}
+.tasks span{
+    display: inline-block;
+}
+.tasks-details-all summary, .tasks-details-main summary, .tasks-details-related summary{
+    border: 2px solid #404040;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #EBEBEB;
+}
+.tasks-details-all summary:hover, .tasks-details-main summary:hover, .tasks-details-related summary:hover{
+    cursor: pointer;
+}
+.tasks .tasks-details-all .task .letters_to_center, .tasks .tasks-details-main .task .letters_to_center, .tasks .related-data-tasks-outside .letters_to_center, .tasks .tasks-details-related .task .letters_to_center{
+    display: inline-block;
+    vertical-align:top;
+}
+.tasks .tasks-details-all .task .letters_to_center .letters, .tasks .tasks-details-main .task .letters_to_center .letters, .tasks .related-data-tasks-outside .letters_to_center .letters, .tasks .tasks-details-related .task .letters_to_center .letters{
+    display: inline-block;
+    vertical-align:top;
+    border-radius: 15px;
+    width: 70;
+    margin: 0 7px 10px 0;
+    text-align: center;
+    padding: 15px 3px 12px 3px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    border: 2px solid #404040;
+}
+.tasks .tasks-details-all .task .letters_to_center .letters .letters_label span, .tasks .tasks-details-main .task .letters_to_center .letters .letters_label span, .tasks .related-data-tasks-outside .letters_to_center .letters .letters_label span, .tasks .tasks-details-related .task .letters_to_center .letters .letters_label span{
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+.tasks .tasks-details-all .task .summary-data, .tasks .tasks-details-main .task .summary-data, .tasks .related-data-tasks-outside .summary-data, .tasks .tasks-details-related .task .summary-data{
+    display: inline-block;
+    vertical-align:top;
+    max-width: 76%;
+}
+.tasks-details-all .long-all-tasks, .tasks-details-main .long-main-tasks, .tasks-details-related .long-task-related-details{
+    background-color: #fff;
+    border-bottom: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #404040;
+    border-radius: 0 0 10px 10px;
+}
+.tasks-details-all .long-all-tasks .client-data1, .tasks-details-main .long-main-tasks .client-data2{
+    display: inline-block;
+    vertical-align:top;
+    padding: 0 10px;
+    max-width: 34%;
+}
+.tasks-details-all .long-all-tasks .task-data1, .tasks-details-main .long-main-tasks .task-data2{
+    display: inline-block;
+    vertical-align:top;
+    padding: 0 10px;
+    border-left: 3px solid #404040;
+    margin-bottom: 2px;
+    max-width: 50%;
+}
+.tasks-details-all span, .tasks-details-main span{
+    font-weight: bold;
+}
+.tasks-details-all .long-all-tasks .task-data1 a, .tasks-details-main .long-main-tasks .task-data2 a{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 5px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    max-width: 90px;
+    text-align: center;
+}
+.tasks-details-all .long-all-tasks .task-data1 a span, .tasks-details-main .long-main-tasks .task-data2 a span{
+    font-weight: normal;
+    border: 3px solid #707070;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 1px;
+    background-color: #969696;
+    margin-top: 7px;
+}
+.tasks-details-all .long-all-tasks .task-data1 a:hover span, .tasks-details-main .long-main-tasks .task-data2 a:hover span{
+    border: 3px solid #202020;
+}
+.tasks-details-main .long-main-tasks button{
+    display: block;
+    margin: 10px 10px 20px 30px;
+    font-size: 13px;
+    padding: 4px;
+    background-color: #E0E0E0;
+    border-radius: 8px;
+    border: 2px solid #606060;
+}
+.tasks-details-main .long-main-tasks button:hover{
+    background-color: #808080;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.tasks-details-all .main-date, .tasks-details-main .main-date, .tasks-details-related .main-date{
+    background-color: #606060;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 2px;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    border: 2px solid #202020;
+    border-radius: 10px 10px 0px 0px;
+    margin: 0 30%;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 1030px) {
+    .search-items-all-tasks .search-items-all-tasks-input, .search-items-main-tasks .search-items-main-tasks-input, .search-items-related-tasks-view .search-items-related-tasks-view-input{
+        width: 50%;
+    }
+    .tasks-details-all, .tasks-details-main, .tasks-details-related{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+@media only screen and (max-width: 728px) {
+    .search-items-all-tasks .search-items-all-tasks-input, .search-items-main-tasks .search-items-main-tasks-input, .search-items-related-tasks-view .search-items-related-tasks-view-input{
+        width: 50%;
+    }
+    .tasks-details-all, .tasks-details-main, .tasks-details-related{
+        padding: 20px;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}
+@media only screen and (max-width: 543px) {
+    .tasks .tasks-details-all .task .summary-data, .tasks .tasks-details-main .task .summary-data, .tasks .related-data-tasks-outside .summary-data, .tasks .tasks-details-related .task .summary-data{
+        max-width: 66%;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .allTasksh2, .mainTasksh2, .viewRelatedTasksh2{
+        font-size: 15px;
+    }
+    .allTasksh2 h2, .mainTasksh2 h2, .viewRelatedTasksh2 h2{
+        width: 200px;
+        border: 2px solid #A0A0A0;
+    }
+    .tasks .noTasks{
+        font-size: 16px;
+    }
+    .search-items-all-tasks, .search-items-main-tasks, .search-items-related-tasks-view{
+        margin-top: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .search-items-all-tasks .search-items-all-tasks-input, .search-items-main-tasks .search-items-main-tasks-input, .search-items-related-tasks-view .search-items-related-tasks-view-input{
+        width: 80%;
+    }
+    .search-items-all-tasks .search-items-all-tasks-select, .search-items-main-tasks .search-items-main-tasks-select, .search-items-related-tasks-view .search-items-related-tasks-view-select{
+        display: inline-block;
+        vertical-align: top;
+        width: 250px;
+    }
+    .search-items-all-tasks input, .search-items-main-tasks input, .search-items-related-tasks-view input{
+        font-size: 12px;
+        border: 2px solid #606060;
+    }
+    .search-items-all-tasks input:focus, .search-items-main-tasks input:focus, .search-items-related-tasks-view input:focus{
+        border: 2px solid #404040;
+    }
+    .search-items-all-tasks h3, .search-items-main-tasks h3, .search-items-related-tasks-view h3{
+        font-size: 15px;
+    }
+    .search-items-all-tasks select, .search-items-main-tasks select, .search-items-related-tasks-view select{
+        font-size: 12px;
+        border: 2px solid #606060;
+    }
+    .search-items-all-tasks button, .search-items-main-tasks button, .search-items-related-tasks-view button{
+        font-size: 12px;
+        padding: 3px 9px;
+    }
+    .tasks-details-all, .tasks-details-main, .tasks-details-related{
+        padding: 10px;
+        font-size: 13px;
+        border: 6px double #333;
+        border-radius: 15px;
+    }
+    .tasks-details-all summary, .tasks-details-main summary, .tasks-details-related summary{
+        padding: 6px;
+        border-radius: 9px;
+    }
+    .tasks .tasks-details-all .task .letters_to_center .letters, .tasks .tasks-details-main .task .letters_to_center .letters, .tasks .related-data-tasks-outside .letters_to_center .letters, .tasks .tasks-details-related .task .letters_to_center .letters{
+        padding: 12px 2px 10px 2px;
+        letter-spacing: 0.3px;
+    }
+    .tasks .tasks-details-all .task .letters_to_center .letters .letters_label span, .tasks .tasks-details-main .task .letters_to_center .letters .letters_label span, .tasks .related-data-tasks-outside .letters_to_center .letters .letters_label span, .tasks .tasks-details-related .task .letters_to_center .letters .letters_label span{
+        font-size: 17px;
+        padding-bottom: 7px;
+    }
+    .tasks .tasks-details-all .task .summary-data, .tasks .tasks-details-main .task .summary-data, .tasks .related-data-tasks-outside .summary-data, .tasks .tasks-details-related .task .summary-data{
+        max-width: 60%;
+    }
+    .tasks-details-all .long-all-tasks .client-data1, .tasks-details-main .long-main-tasks .client-data2{
+        padding: 0 6px;
+    }
+    .tasks-details-all .long-all-tasks .task-data1, .tasks-details-main .long-main-tasks .task-data2{
+        padding: 0 6px;
+        border-left: 2px solid #404040;
+    }
+    .tasks-details-all .long-all-tasks .task-data1 a img, .tasks-details-main .long-main-tasks .task-data2 a img{
+        width: 25px;
+        height: 30px;
+    }
+    .tasks-details-main .long-main-tasks button{
+        font-size: 12px;
+    }
+    .tasks-details-all .main-date, .tasks-details-main .main-date, .tasks-details-related .main-date{
+        padding: 1px;
+        margin: 0 25%;
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 328px) {
+    .tasks .tasks-details-all .task .letters_to_center, .tasks .tasks-details-main .task .letters_to_center, .tasks .related-data-tasks-outside .letters_to_center, .tasks .tasks-details-related .task .letters_to_center{
+        width: 90%;
+        text-align: center;
+    }
+    .tasks .tasks-details-all .task .letters_to_center .letters, .tasks .tasks-details-main .task .letters_to_center .letters, .tasks .related-data-tasks-outside .letters_to_center .letters, .tasks .tasks-details-related .task .letters_to_center .letters{
+        margin: 0 0 5px 0;
+        padding: 9px 2px 8px 2px;  
+    }
+    .tasks .tasks-details-all .task .letters_to_center .letters .letters_label span, .tasks .tasks-details-main .task .letters_to_center .letters .letters_label span, .tasks .related-data-tasks-outside .letters_to_center .letters .letters_label span, .tasks .tasks-details-related .task .letters_to_center .letters .letters_label span{
+        padding-bottom: 5px;
+    }
+    .tasks .tasks-details-all .task .summary-data, .tasks .tasks-details-main .task .summary-data, .tasks .related-data-tasks-outside .summary-data, .tasks .tasks-details-related .task .summary-data{
+        max-width: none;
+    }
+    .tasks-details-all .long-all-tasks .client-data1, .tasks-details-main .long-main-tasks .client-data2{
+        display: block;
+        padding: 10px 2px 15px 2px;
+        max-width: none;
+    }
+    .tasks-details-all .long-all-tasks .task-data1, .tasks-details-main .long-main-tasks .task-data2{
+        display: block;
+        padding: 10px 2px 15px 2px;
+        border-left: none;
+        border-top: 5px double #404040;
+        max-width: none;
+    }
+}
+
+/*Dalsza część VIEW MAIN TASKS*/
+
+.related-data-client-outside, .related-data-tasks-outside{
+    background-color: #fff;
+    border: 10px double #333;
+    padding: 8px 20px 8px 20px;
+    border-radius: 20px;
+    font-size: 13.5px;
+    text-align: center;
+    margin-bottom: 10px;
+    max-height: 620px;
+    margin: 0 22% 10px 22%;
+    overflow: auto;
+}
+.tasks-details-related .long-task-related-details{
+    background-color: #fff;
+    border-bottom: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #404040;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+}
+.related-data-client-outside h3, .related-data-tasks-outside h3, .tasks-details-related h3{
+    font-size: 18px;
+    text-align: center;
+}
+.related-data-tasks-outside summary{
+    text-align: left;
+    margin-bottom: 20px;
+    background-color: #A0A0A0;
+    padding: 10px;
+    border-radius: 10px;
+}
+.related-data-tasks-outside summary:hover{
+    cursor: pointer;
+}
+.related-data-client-outside .related-client-Data1{
+    display: inline-block;
+    vertical-align:top;
+    padding: 10px 40px 20px 40px;
+    text-align: left;
+    max-width: 25%;
+}
+.related-data-client-outside .related-client-Data2{
+    display: inline-block;
+    vertical-align:top;
+    border-left: 4px solid #606060;
+    padding: 10px 40px 20px 40px;
+    text-align: left;
+    max-width: 40%;
+}
+.related-data-tasks-outside .related-data-tasks-outside-first{
+    display: inline-block;
+    vertical-align: top;
+    max-width: 45%;
+    margin-right: 3%;
+    margin-bottom: 20px;
+}
+.related-data-tasks-outside .related-data-tasks-outside-second{
+    display: inline-block;
+    vertical-align: top;
+    max-width: 45%;
+    margin-left: 3%;
+    margin-bottom: 20px;
+}
+.related-data-client-outside span, .related-data-tasks-outside span, .tasks-details-related span{
+    font-weight: bold;
+}
+.related-data-tasks-outside label, .tasks-details-related label{
+    font-size: 13.5px;
+}
+.related-data-tasks-outside a, .tasks-details-related .long-task-related-details a{
+    display: inline-block;
+    /* background-color: #808080; */
+    /* padding: 2px; */
+    margin-bottom: 5px;
+    /* border-radius: 5px; */
+    text-decoration: none;
+    /* color: #FFFFFF; */
+    /* border: 3px solid #606060; */
+    text-align: center;
+}
+.related-data-tasks-outside a span, .tasks-details-related .long-task-related-details a span{
+    font-weight: normal;
+    border: 3px solid #707070;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #969696;
+    margin-top: 7px;
+}
+.related-data-tasks-outside a:hover span, .tasks-details-related .long-task-related-details a:hover span{
+    border: 3px solid #202020;
+}
+
+@media only screen and (max-width: 1030px) {
+    .related-data-client-outside, .related-data-tasks-outside{
+        margin: 0 10% 10px 10%;
+    }
+}
+@media only screen and (max-width: 728px) {
+    .related-data-client-outside, .related-data-tasks-outside{
+        margin: 0 1% 10px 1%;
+        padding: 5px 20px;
+    }
+    .tasks-details-related .long-task-related-details{
+        background-color: #fff;
+        border-bottom: 2px solid #404040;
+        border-left: 2px solid #404040;
+        border-right: 2px solid #404040;
+        border-radius: 0 0 10px 10px;
+        padding: 10px;
+    }
+    .related-data-client-outside .related-client-Data1{
+        padding: 10px 20px 20px 20px;
+    }
+    .related-data-client-outside .related-client-Data2{
+        padding: 10px 20px 20px 20px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .related-data-client-outside, .related-data-tasks-outside{
+        border: 6px double #333;
+        padding: 5px 10px 5px 10px;
+        font-size: 13px;
+    }
+    .related-data-client-outside h3, .related-data-tasks-outside h3, .tasks-details-related h3{
+        font-size: 16px;
+    }
+    .related-data-tasks-outside summary{
+        margin-bottom: 10px;
+        padding: 6px;
+        border-radius: 10px;
+    }
+    .related-data-client-outside .related-client-Data1{
+        padding: 10px 14px 15px 14px;
+    }
+    .related-data-client-outside .related-client-Data2{
+        border-left: 2px solid #606060;
+        padding: 10px 14px 15px 14px;
+        max-width: 47%;
+    }
+    .related-data-tasks-outside .related-data-tasks-outside-first{
+        margin-right: 2%;
+    }
+    .related-data-tasks-outside .related-data-tasks-outside-second{
+        margin-left: 2%;
+    }
+    .related-data-tasks-outside label, .tasks-details-related label{
+        font-size: 13px;
+    }
+    .related-data-tasks-outside a img, .tasks-details-related .long-task-related-details a img{
+        width: 25px;
+        height: 30px;
+    }
+    .long-task-related-details .long-task-related-details-div-to-center{
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 328px) {
+    .related-data-client-outside .related-client-Data1{
+        display: block;
+        padding: 10px 2px 15px 2px;
+        max-width: none;
+        text-align: center;
+    }
+    .related-data-client-outside .related-client-Data2{
+        display: block;
+        border-left: none;
+        border-top: 3px dashed #606060;
+        text-align: center;
+        padding: 10px 2px 15px 2px;
+        max-width: none;
+    }
+    .related-data-tasks-outside .related-data-tasks-outside-first{
+        display: block;
+        max-width: none;
+        margin-right: 0;
+    }
+    .related-data-tasks-outside .related-data-tasks-outside-second{
+        display: block;
+        max-width: none;
+        margin-left: 0;
+    }
+}
+
+/*USER PROFILE*/
+
+.user-profile-outsite{
+    min-height: calc(100vh - 357px);
+    width: 100%;
+    word-break: break-all;
+}
+.user-profile{
+    background-color: #fff;
+    padding: 10px;
+    margin: 43px 30%;
+    border: 10px double #333;
+    border-radius: 20px;
+}
+.user-profile h2{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 45px;
+}
+.user-profile .user-profile-data{
+    margin: 0 auto;
+    text-align: center;
+}
+.user-profile .user-profile-data label{
+    font-size: 15px;
+    display: block;
+    margin-bottom: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.user-profile .user-profile-data label span{
+    font-weight:normal;
+    font-size: 15px;
+}
+.user-profile .user-profile-data button{
+    margin: 10px 10px 20px 30px;
+    font-size: 15px;
+    padding: 5px;
+    background-color: #E0E0E0;
+    border-radius: 8px;
+    border: 2px solid #404040;
+    letter-spacing: 1px;
+}
+.user-profile .user-profile-data button:hover{
+    background-color: #808080;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1086px) {
+    .user-profile-outsite{
+        min-height: calc(100vh - 350px);
+    }
+    .user-profile{
+        margin: 43px 20%;
+    }
+}
+@media only screen and (max-width: 725px) {
+    .user-profile{
+        margin: 43px 10%;
+    }
+}
+@media only screen and (max-width: 543px) {
+    .user-profile{
+        margin: 43px 1%;
+    }
+    .user-profile .user-profile-data button{
+        margin: 10px 10px 20px 10px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .user-profile-outsite{
+        min-height: calc(100vh - 327px);
+    }
+    .user-profile{
+        padding: 10px 0;
+        border: 6px double #333;
+    }
+    .user-profile h2{
+        font-size: 17px;
+    }
+    .user-profile .user-profile-data label{
+        font-size: 14px;
+        letter-spacing: 0.3px;
+    }
+    .user-profile .user-profile-data label span{
+        font-size: 14px;
+    }
+    .user-profile .user-profile-data button{
+        margin: 10px 3px 10px 3px;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+}
+
+/*CALENDAR*/ /*CALENDAR DAYS*/
+
+.calendar-outside, .calendar-day-outside{
+    min-height: calc(100vh - 340px);
+    width: 100%;
+    word-break: break-all;
+}
+
+.calendar, .calendar_days{
+    text-align: center;
+    background-color: #E0E0E0;
+    margin: 80px 20% 70px 20%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.3);
+}
+.calendar .weekdays, .calendar .days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+.calendar h2, .calendar_days h2{
+    padding: 20px;
+    font-size: 19px;
+    background-color: #003366;
+    color: #FFFFFF;
+    border-radius: 20px 20px 0 0;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+.calendar .month button{
+    background-color: #A0A0A0;
+    border-radius: 4px;
+    border: 1px solid #202020;
+    font-size: 10px;
+    padding: 2px 8px 2px 8px;
+    margin: 0 2%;
+}
+.calendar .month button:hover{
+    cursor: pointer;
+    border: 1px solid #606060;
+    background-color: #808080;
+}
+.calendar #month, .calendar #year{
+    padding: 2px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+.calendar #month:hover, .calendar #year:hover{
+    cursor: pointer;
+}
+.calendar .weekdays{
+    font-size: 16px;
+    border: 4px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.calendar .days a{
+    background-color: #606060;
+    border: 4px dashed #606060;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #E0E0E0;
+    border-radius: 10px;
+    margin: 6px;
+    padding: 10px 0;
+}
+.calendar .days a:hover{
+    border: 4px solid #E0E0E0;
+    background-color: #003366;
+}
+
+@media only screen and (max-width: 1000px) {
+    .calendar-outside, .calendar-day-outside{
+        min-height: calc(100vh - 330px);
+    }
+    .calendar, .calendar_days{
+        margin: 80px 10% 70px 10%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .calendar, .calendar_days{
+        margin: 80px 5% 70px 5%;
+    }
+}
+@media only screen and (max-width: 540px) {
+    .calendar-outside, .calendar-day-outside{
+        min-height: calc(100vh - 322px);
+    }
+    .calendar, .calendar_days{
+        border-radius: 15px;
+    }
+    .calendar h2, .calendar_days h2{
+        padding: 15px;
+        font-size: 18px;
+        border-radius: 15px 15px 0 0;
+        letter-spacing: 0.7px;
+    }
+    .calendar .month button{
+        border-radius: 4px;
+        font-size: 10px;
+        padding: 2px 8px 2px 8px;
+        margin: 0 2%;
+    }
+    .calendar #month, .calendar #year{
+        padding: 2px;
+        font-size: 11px;
+        margin: 0 5px;
+    }
+    .calendar .weekdays{
+        font-size: 14px;
+        border: 3px solid #FFFFFF;
+        padding: 4px;
+        letter-spacing: 0.3px;
+    }
+    .calendar .days a{
+        border: 3px dashed #606060;
+        font-size: 17px;
+        border-radius: 8px;
+        margin: 4px;
+        padding: 8px 0;
+    }
+    .calendar .days a:hover{
+        border: 3px solid #E0E0E0;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .calendar-outside, .calendar-day-outside{
+        min-height: calc(100vh - 289px);
+    }
+    .calendar, .calendar_days{
+        margin: 60px 1% 50px 1%;
+        border-radius: 15px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .calendar, .calendar_days{
+        /* margin: 80px 20% 70px 20%; */
+        border-radius: 10px;
+    }
+    .calendar h2, .calendar_days h2{
+        padding: 12px;
+        font-size: 15px;
+        border-radius: 10px 10px 0 0;
+        letter-spacing: 0.5px;
+    }
+    .calendar #month, .calendar #year{
+        padding: 1px;
+        border-radius: 3px;
+    }
+    .calendar .weekdays{
+        font-size: 12px;
+        padding: 4px;
+        letter-spacing: 0px;
+    }
+    .calendar .days a{
+        border: 2px dashed #606060;
+        font-size: 15px;
+        margin: 3px;
+        padding: 6px 0;
+    }
+    .calendar .days a:hover{
+        border: 2px solid #E0E0E0;
+    }
+}
+@media only screen and (max-width: 300px) {
+    .calendar-outside, .calendar-day-outside{
+        min-height: calc(100vh - 290px);
+    }
+    .calendar .month button{
+        margin: 0 1%;
+    }
+    .calendar .days a{
+        font-size: 14px;
+        margin: 2px;
+        padding: 5px 0;
+    }
+}
+
+/*CALENDAR DAYS*/
+
+.calendar_days .calendar-Data{
+    margin: 35px 0;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+.calendar_days .calendar-Data .calendar-Data-label{
+    display: inline-block;
+    border: 2px dashed #808080;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 7px 0;
+}
+.calendar_days .calendar-Data label{
+    color: #404040;
+    font-weight: bold;
+    font-size: 16px;
+}
+.calendar_days .no-tasks{
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+.task_calendar_days{
+    background-color: #E0E0E0;
+    padding: 15px 20px;
+    border-radius: 20px;
+}
+.task_calendar_days .main-hour{
+    font-size: 16px;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+.task_calendar_days .main-hour span{
+    font-weight: bold;
+    background-color: #606060;
+    color: #E0E0E0;
+    padding: 5px;
+    border-radius: 10px;
+}
+.task_calendar_days .service-counter{
+    font-weight: bold;
+}
+.task_calendar_days span{
+    font-weight: bold;
+    display: inline-block;
+}
+.task_calendar_days summary{
+    border: 2px dashed #404040;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 13.5px;
+    background-color: #C0C0C0;
+}
+.task_calendar_days summary:hover{
+    cursor: pointer;
+}
+.task_calendar_days .letters{
+    display: inline-block;
+    vertical-align:top;
+    padding: 0 7px 10px 0;
+}
+.task_calendar_days .letters img{
+    border-radius: 15px;
+}
+.calendar_days .addCustomers-button{
+    padding: 7px;
+    background-color: #E0E0E0;
+    border-radius: 15px;
+    font-size: 13.5px;
+    border: 2px solid #404040;
+    letter-spacing: 0.5px;
+    margin: 0 0 5px 5px;
+}
+.calendar_days .addCustomers-button:hover{
+    cursor: pointer;
+    background-color: #606060;
+    color: #fff;
+}
+.calendar_days .task_calendar_days .longTasksAndClientCalendar .addTaskButton{
+    margin: 10px;
+}
+.calendar_days .task_calendar_days .longTasksAndClientCalendar .addTaskButton button{
+    padding: 3px;
+    background-color: #C0C0C0;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    border-radius: 6px;
+    margin: 0 0 10px 5px;
+    border: 2px solid #606060;
+}
+.calendar_days .task_calendar_days .longTasksAndClientCalendar button:hover{
+    cursor: pointer;
+    background-color: #EBEBEB;
+}
+.task_calendar_days .summary-data{
+    display: inline-block;
+    vertical-align:top;
+    max-width: 83%;
+}
+.task_calendar_days .longTasksAndClientCalendar{
+    background-color: #E0E0E0;
+    border-bottom: 2px dashed #404040;
+    border-left: 2px dashed #404040;
+    border-right: 2px dashed #404040;
+    border-radius: 0 0 10px 10px;
+    text-align: left;
+}
+.task_calendar_days .longTasksAndClientCalendar .clientDataCalendar{
+    display: inline-block;
+    vertical-align:top;
+    padding: 0 10px;
+    font-size: 13.5px;
+    max-width: 34%;
+}
+.task_calendar_days .longTasksAndClientCalendar .taskDataCalendar{
+    display: inline-block;
+    vertical-align:top;
+    padding: 0 10px;
+    border-left: 3px solid #404040;
+    margin-bottom: 2px;
+    font-size: 13.5px;
+    max-width: 50%;
+}
+.task_calendar_days .longTasksAndClientCalendar .taskDataCalendar a{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 5px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    max-width: 110px;
+    text-align: center;
+}
+.task_calendar_days .longTasksAndClientCalendar .taskDataCalendar a span{
+    font-weight: normal;
+    border: 3px solid #707070;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #969696;
+    margin-top: 7px;
+}
+.task_calendar_days .longTasksAndClientCalendar .taskDataCalendar a:hover span{
+    border: 3px solid #202020;
+}
+.calendar_days .calendar-Data button{
+    background-color: #A0A0A0;
+    border-radius: 4px;
+    border: 1px solid #202020;
+    font-size: 12px;
+    padding: 2px 8px 2px 8px;
+    margin: 0 2%;
+}
+.calendar_days .calendar-Data button:hover{
+    cursor: pointer;
+    border: 1px solid #606060;
+    background-color: #808080;
+}
+
+@media only screen and (max-width: 700px) {
+    .calendar_days .calendar-Data{
+        margin-bottom: 20px;
+    }
+    .task_calendar_days .summary-data{
+        max-width: 82%;
+    }
+}
+@media only screen and (max-width: 540px) {
+    .calendar_days .calendar-Data .calendar-Data-label{
+        padding: 3px;
+        border-radius: 5px;
+    }
+    .task_calendar_days .summary-data{
+        max-width: 78%;
+    }
+}
+@media only screen and (max-width: 464px) {
+    .task_calendar_days .summary-data{
+        max-width: 76%;
+    }
+    .task_calendar_days .longTasksAndClientCalendar .clientDataCalendar{
+        padding: 0 5px;
+        max-width: 36%;
+    }
+    .task_calendar_days .longTasksAndClientCalendar .taskDataCalendar{
+        padding: 0 5px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .calendar_days .calendar-Data label{
+        font-size: 14px;
+    }
+    .calendar_days .no-tasks{
+        font-size: 13px;
+    }
+    .task_calendar_days{
+        padding: 10px 10px;
+        border-radius: 15px;
+    }
+    .task_calendar_days .main-hour{
+        font-size: 14px;
+    }
+    .task_calendar_days .main-hour span{
+        padding: 4px;
+    }
+    .task_calendar_days summary{
+        padding: 6px;
+        border-radius: 9px;
+        font-size: 13px;
+    }
+    .task_calendar_days .summary-data{
+        max-width: 74%;
+    }
+    .task_calendar_days .longTasksAndClientCalendar .clientDataCalendar{
+        font-size: 13px;
+    }
+    .task_calendar_days .longTasksAndClientCalendar .taskDataCalendar{
+        border-left: 2px solid #404040;
+        font-size: 13px;
+    }
+    .task_calendar_days .longTasksAndClientCalendar .taskDataCalendar a img{
+        width: 25px;
+        height: 30px;
+    }
+    .calendar_days .addCustomers-button{
+        font-size: 12.5px;
+    }
+    .calendar_days .task_calendar_days .longTasksAndClientCalendar .addTaskButton button{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 328px) {
+    .task_calendar_days .letters{
+        padding: 0 0 5px 0;
+        text-align: center;
+        width: 90%;
+    }
+    .task_calendar_days .letters img{
+        border-radius: 10px;
+        width: 55px;
+        height: 40px;
+        margin: 0 auto;
+    }
+    .task_calendar_days .summary-data{
+        max-width: none;
+    }
+    .task_calendar_days .longTasksAndClientCalendar .clientDataCalendar{
+        max-width: none;
+    }
+    .task_calendar_days .longTasksAndClientCalendar .taskDataCalendar{
+        border-left: none;
+        border-top: 3px dashed #404040;
+        max-width: none;
+    }
+}
+@media only screen and (max-width: 308px) {
+    .calendar_days .calendar-Data{
+        margin: 15px 0;
+    }
+    .calendar_days .calendar-Data .calendar-Data-label{
+        display: block;
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+    .calendar_days .calendar-Data button{
+        border-radius: 4px;
+        font-size: 12px;
+        padding: 4px 20px 4px 20px;
+        margin: 7px 0;
+    }
+}

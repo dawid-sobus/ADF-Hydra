@@ -1,0 +1,51 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <div class="edit-user">
+        <h2>Edytuj dane użytkownika:</h2>
+
+        <form class="form-edit-user" action="/strona_glowna/profil_uzytkownika/edytuj_profil" method="POST">
+            <h3>Dane usługi:</h3>
+
+            <label for="name">Imie:<span>*</span></label><br>
+            <input type="text" id="name" name="name" value="<%= user.name %>" required><br>
+            <label for="lastName">Nazwisko:<span>*</span></label><br>
+            <input type="text" id="lastName" name="lastName" value="<%= user.lastName %>" required><br>
+            <label for="option-1">Płeć:<span>*</span></label><br>
+
+            <% if(user.gender === "Kobieta"){ %> 
+                <input type="radio" id="option-1" name="gender" value="Kobieta" checked>
+                <label for="option-1">Kobieta</label>
+                <input type="radio" name="gender" id="option-2" value="Mężczyzna">
+                <label for="option-2">Mężczyzna</label><br><br>
+            <% } else { %> 
+                <input type="radio" id="option-1" name="gender" value="Kobieta">
+                <label for="option-1">Kobieta</label>
+                <input type="radio" name="gender" id="option-2" value="Mężczyzna" checked>
+                <label for="option-2">Mężczyzna</label><br><br>
+            <% } %> 
+            
+            <label for="dateOfBirth">Data urodzenia:<span>*</span></label><br>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" value="<%= user.dateOfBirth %>"><br>
+            
+            <label><%= user.dateOfBirth %> </label>
+            <label for="email">E-mail:<span>*</span></label><br>
+            <input type="email" id="email" name="email" value="<%= user.email %>" required><br>
+            <label for="phone">Numer telefonu: (np: 444000111)</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" value="<%= user.phone %>"><br><br>
+
+            <label for="login">Login:<span>*</span></label><br>
+            <input type="text" id="login" name="login" value="<%= user.login %>" required><br>
+            <label for="password">Hasło:<span>*</span></label><br>
+            <input type="password" id="password" name="password" minlength="5" placeholder="Podaj nowe hasło" onchange="check()"><br>
+            <label for="rPassword">Powtórz hasło:<span>*</span></label><br>
+            <input type="password" id="rPassword" name="rPassword" minlength="5" placeholder="Ponownie wpisz to hasło" onchange="check()"><br><br>
+
+            <button>Zapisz dane</button>
+        </form>
+    </div><br><br><br><br>
+    <%- include('../partials/footer.ejs') %>
+    <script src="/js/jsUserProfile/jsEditUserProfile.js"></script>
+</body>
+</html>

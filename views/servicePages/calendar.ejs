@@ -1,0 +1,59 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>
+
+<body onload="setCurrentData(), days(), tasksInDays()">
+
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="calendar-outside">
+    <div class="calendar">
+
+        <h2>Kalendarz usług</h2>
+
+        <div class="month">
+            <br>
+            <button class="prev" onclick="prevMonth(), tasksInDays()">&#10094</button>
+                <select name="month" id="month" onchange="days(), tasksInDays()">
+                    <option value="01">Styczeń</option>
+                    <option value="02">Luty</option>
+                    <option value="03">Marzec</option>
+                    <option value="04">Kwiecień</option>
+                    <option value="05">Maj</option>
+                    <option value="06">Czerwiec</option>
+                    <option value="07">Lipiec</option>
+                    <option value="08">Sierpień</option>
+                    <option value="09">Wrzesień</option>
+                    <option value="10">Październik</option>
+                    <option value="11">Listopad</option>
+                    <option value="12">Grudzień</option>
+                </select>
+
+                <select name="year" id="year" onchange="days(), tasksInDays()">
+                    <% for(var i=tNextYear+1; i>=tYear; i--){ %> 
+                        <option value="<%= i %>"><%= i %></option>
+                    <% } %> 
+                </select>
+                <button class="next" onclick="nextMonth(), tasksInDays()">&#10095</button>
+            <br><br>
+        </div>
+
+        <div class="weekdays">
+            <div>Pon</div>
+            <div>Wt</div>
+            <div>Śr</div>
+            <div>Czw</div>
+            <div>Pt</div>
+            <div>Sob</div>
+            <div>Niedz</div>
+        </div>
+
+        <div class="days" id="days"></div>
+        <div id="tasksData" data-test="<%= tasks %>"></div>
+    </div>
+</div><br>
+    
+
+    <%- include('../partials/footer.ejs') %>
+    <script src="/js/jsServicePages/jsCalendar.js"></script>
+</body>
+</html>

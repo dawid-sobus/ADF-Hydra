@@ -1,0 +1,29 @@
+<div class="menu">
+    <a href="/strona_glowna"><h1>ADF-<span>Hydra</span></h1></a>
+</div>
+
+<nav>
+    <div class="dropdownOutside">
+        <div class="dropdown">
+
+            <div class="loginOut-button-phone"><a href="/strona_glowna/profil_uzytkownika" class="a-nav1"><%= userLoginMenu.login %></a></div>
+
+            <a href="#" class="dropdownMenu"><span>...</span>Menu</a>
+
+            <ul>
+                <li><a href="/strona_glowna/serwis">Serwis</a></li>
+                <li><a href="/strona_glowna/klienci">Klienci</a></li>
+                <li><a href="/strona_glowna/serwis/powiazane_uslugi">Główne usługi</a></li>
+                <li><a href="/strona_glowna/serwis/kalendarz">Kalendarz usług</a></li>
+
+                <div class="button-log-out">
+                    <li><label for="loginOut-button"><a href="/strona_glowna/profil_uzytkownika" class="a-nav"><%= userLoginMenu.login %></a></label></li>
+                    <li><button class="loginOut-button" onclick="location.href='/wyloguj'">Wyloguj się</button></li>
+                </div>              
+            </ul>
+
+        </div>
+    </div>
+
+    <script src="/js/jsPartials/jsNav.js"></script>
+</nav>

@@ -1,0 +1,60 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>    
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <div class="add-client">
+        <h2>Dodaj klienta</h2>
+
+        <form class="form-add-client" action="/strona_glowna/dodaj_klienta" method="POST" enctype="multipart/form-data">
+            <div class="form-add-client-data-client">
+                <h3>Dane klienta:</h3>
+            
+                <label for="name">Imie:<span>*</span></label><br>
+                <input type="text" id="name" name="name" placeholder="Podaj imię" required><br>
+                <label for="lastName">Nazwisko:<span>*</span></label><br>
+                <input type="text" id="lastName" name="lastName" placeholder="Podaj nazwisko" required><br>
+                <label for="address">Adres:<span>*</span></label><br>
+                <input type="text" id="address" name="address" placeholder="Podaj adres" required><br>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" placeholder="Podaj E-mail"><br>
+                <label for="phone">Numer telefonu:<span>*</span> (np: 444000111)</label><br>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" placeholder="Podaj numer telefonu" required><br><br>
+            
+                <h3>Dane usługi:</h3>
+
+                <label for="nameOfService">Nazwa usługi:<span>*</span></label><br>
+                <input type="text" id="nameOfService" name="nameOfService" placeholder="Podaj nazwę usługi" required><br>
+                <label for="placeOfAssembly">Miejsce montażu:<span>*</span> (ul.ulica 220, miejscowość)</label><br>
+                <input type="text" id="placeOfAssembly" name="placeOfAssembly" placeholder="Podaj miejsce montażu" required><br><br>
+                <label for="dateOfService">Data i godzina rozpoczęcia zaplanowanej usługi:<span>*</span></label><br>
+                <input type="datetime-local" id="dateOfService" name="dateOfService" required><br>
+                <label for="dateOfAssembly">Data montażu:</label><br>
+                <input type="date" id="dateOfAssembly" name="dateOfAssembly"><br>
+            </div>
+            
+            <div class="form-add-client-data-task">
+                <label for="warrantyDate">Data gwarancji:</label><br>
+                <input type="date" id="warrantyDate" name="warrantyDate"><br>
+                <label for="DateNextInspection">Data następnego przeglądu:</label><br>
+                <input type="date" id="DateNextInspection" name="DateNextInspection"><br>
+                <label for="firstLaunchDate">Data pierwszego uruchomienia urządzenia:</label><br>
+                <input type="date" id="firstLaunchDate" name="firstLaunchDate"><br><br>
+                <label for="performedActivity">Jaka czynność ma być/była wykonywana:</label><br>
+                <textarea name="performedActivity" id="performedActivity" placeholder="Wpisz wykonywane czynności"></textarea><br>
+                <label for="dateTime">Podaj datę i godzinę wykonania czynności:</label><br>
+                <input type="datetime-local" id="dateTime" name="dateTime"><br><br>
+                <label for="mountedDevices">Zamontowane urządzenia/części:</label><br>
+                <textarea name="mountedDevices" id="mountedDevices" placeholder="Wpisz zamontowane urządzenia/części"></textarea><br><br>
+                <label for="invoice">Faktura za wykonanie zlecenia:</label><br>
+                <input type="file" name="invoice" accept=".pdf,application/pdf" multiple><br><br>
+                <label for="postWarrantyProtocols">Protokoły pogwarancyjne:</label><br>
+                <input type="file" name="postWarrantyProtocols" accept=".pdf,application/pdf" multiple><br><br><br>
+            </div><br>
+
+            <button class="addClient-button">Dodaj klienta</button>
+            
+        </form>
+    </div><br><br><br><br>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

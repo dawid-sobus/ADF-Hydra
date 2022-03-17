@@ -1,0 +1,47 @@
+<html lang="pl">
+    <%- include('../partials/head.ejs') %>   
+<body>
+
+    <%- include('../partials/nav.ejs') %>
+    <div class="add-related-task">
+        <h2>Dodaj powiązaną usługę</h2>
+
+        <form class="form-add-related-task" action="/strona_glowna/klienci/<%= task.clientId %>/<%= task._id %>/dodaj_powiazana_usluge" method="POST" enctype="multipart/form-data">
+
+            <div class="form-add-related-task-first">
+                <label for="nameOfService">Nazwa usługi:<span>*</span></label><br>
+                <input type="text" id="nameOfService" name="nameOfService" value="<%= task.nameOfService %>" required><br>
+                <label for="placeOfAssembly">Miejsce montażu:<span>*</span> (ul.ulica 220, miejscowość)</label><br>
+                <input type="text" id="placeOfAssembly" name="placeOfAssembly" value="<%= task.placeOfAssembly %>" required><br><br>
+                <label for="dateOfService">Data i godzina rozpoczęcia zaplanowanej usługi:<span>*</span></label><br>
+                <input type="datetime-local" id="dateOfService" name="dateOfService" required><br>
+                <label for="dateOfAssembly">Data montażu:</label><br>
+                <input type="date" id="dateOfAssembly" name="dateOfAssembly"><br>        
+                <label for="warrantyDate">Data gwarancji:</label><br>
+                <input type="date" id="warrantyDate" name="warrantyDate" value="<%= moment(task.warrantyDate).format('YYYY-MM-DD') %>"><br>
+                <label for="DateNextInspection">Data następnego przeglądu:</label><br>
+                <input type="date" id="DateNextInspection" name="DateNextInspection"><br>
+                <label for="firstLaunchDate">Data pierwszego uruchomienia urządzenia:</label><br>
+                <input type="date" id="firstLaunchDate" name="firstLaunchDate"><br><br>
+            </div>
+
+            <div class="form-add-related-task-second">
+                <label for="performedActivity">Jaka czynność ma być/była wykonywana:</label><br>
+                <textarea name="performedActivity" id="performedActivity" placeholder="Wpisz wykonywane czynności"></textarea><br>
+                <label for="dateTime">Podaj datę i godzinę wykonania czynności:</label><br>
+                <input type="datetime-local" id="dateTime" name="dateTime"><br><br>
+                <label for="mountedDevices">Zamontowane urządzenia/części:</label><br>
+                <textarea name="mountedDevices" id="mountedDevices" placeholder="Wpisz zamontowane urządzenia/części"></textarea><br><br>
+                <label for="invoice">Faktura za wykonanie zlecenia:</label><br>
+                <input type="file" name="invoice" accept=".pdf,application/pdf" multiple><br><br>
+                <label for="postWarrantyProtocols">Protokoły pogwarancyjne:</label><br>
+                <input type="file" name="postWarrantyProtocols" accept=".pdf,application/pdf" multiple><br><br><br>
+            </div><br>
+
+            <button class="editTask-button">Dodaj usługę</button><br>
+            
+        </form>        
+    </div><br><br><br><br>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
