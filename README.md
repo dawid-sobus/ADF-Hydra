@@ -19,3 +19,6 @@ Poprzez wpisane dane klienta w zakładce „Dodaj klienta”, w zakładce „Ser
 - Zakładka „Strona główna”
 
 Na stronie głównej wyświetlane są serwisy oraz naprawy, które są zapisane na obecny dzień, po kliknięciu na jeden z serwisów lub napraw będzie rozsuwał się pasek, na którym wyświetlą się szczegółowe dane zadania oraz klienta, u którego należy wykonać usługę.
+
+Uwaga!
+Podczas pobierania repozytorium i uruchomienia go na localhost: ... , w folderze public należy utworzyć folder o nazwie: "uploads" gdzię są przechowywane pliki przesłane przez użytkownika.
