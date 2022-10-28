@@ -167,6 +167,7 @@ function letters_last_name(){
 
         var get_last_name = clients_Last_Name[i].innerHTML.split(' ')
         var first_letter = get_last_name[1].slice(0,1).toLowerCase()
+        
         letters_class[i].innerHTML = `<img src="/letters/${first_letter}.png" onerror="this.onerror=null; this.src='/letters/ż-inne.png'" width="51" height="51">`
     }
 

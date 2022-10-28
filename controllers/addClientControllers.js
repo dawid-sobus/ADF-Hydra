@@ -97,7 +97,10 @@ const postAddClient = async (req, res) => {
         console.log(error)
         const user = await User.findById(loggedUserId)
         const client = await Client.findOne({ userId: loggedUserId }).sort({ createdAt: -1 })
-        fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id, { recursive: true }) //usuwa folder razem z zawartoscia
+        
+        if (fs.existsSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id)) {
+            fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id, { recursive: true }) //usuwa folder razem z zawartoscia
+        }
         await Client.findOneAndRemove({}, { "sort": { "createdAt": -1 } })
         await Task.findOneAndDelete({}, { "sort": { "createdAt": -1 } })
     }

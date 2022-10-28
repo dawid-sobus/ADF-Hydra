@@ -394,7 +394,10 @@ const postRelatedTaskService = async (req, res) => {
 
     } catch (error) {
         res.send('Nie udało się stworzyć zadania')
-        fs.rmdirSync('./public/uploads/' + user.login + '/' + clientC.name + clientC.lastName + clientC._id + '/' + taskId, { recursive: true })
+        
+        if (fs.existsSync('./public/uploads/' + user.login + '/' + clientC.name + clientC.lastName + clientC._id + '/' + taskId)) {
+            fs.rmdirSync('./public/uploads/' + user.login + '/' + clientC.name + clientC.lastName + clientC._id + '/' + taskId, { recursive: true })
+        }
         console.log(error)
         await Task.findOneAndDelete({}, { "sort": { "createdAt": -1 } })
     }

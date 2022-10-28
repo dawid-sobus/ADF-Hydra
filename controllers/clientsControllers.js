@@ -162,7 +162,11 @@ const postAddTask = async (req, res) => {
         res.redirect('/strona_glowna/klienci/' + id)
     } catch (error) {
         res.send('Nie udało się stworzyć zadania')
-        fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + idTask, { recursive: true }) //usuwa folder razem z zawartoscia
+        
+        if (fs.existsSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + idTask)) {
+            fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + idTask, { recursive: true }) //usuwa folder razem z zawartoscia
+        }
+        
         await Task.findOneAndDelete({}, { "sort": { "createdAt": -1 } })
     }
 }
@@ -226,7 +230,11 @@ const deleteClientDelete = async (req, res) => {
 
     var client = await Client.findById(id)
     var user = await User.findById(client.userId)
-    fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id, { recursive: true })
+    
+    
+    if (fs.existsSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id)) {
+        fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id, { recursive: true })
+    }
 
     Client.findByIdAndDelete(id)
         .then(result => {
@@ -308,7 +316,10 @@ const postAddRelatedTask = async (req, res) => {
         res.redirect(`/strona_glowna/klienci/${id}`)
     } catch (error) {
         res.send('Nie udało się stworzyć zadania')
+        
+    if (fs.existsSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + idTask)) {
         fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + idTask, { recursive: true }) //usuwa folder razem z zawartoscia
+    }
         await Task.findOneAndDelete({}, { "sort": { "createdAt": -1 } })
     }
 }
@@ -416,12 +427,17 @@ const deleteTaskDelete = async (req, res) => {
         var tasksRelated = await Task.find({ relatedTask: taskT._id })
         var leng = tasksRelated.length
         for (var i = 0; i < leng; i++) {
-            fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + tasksRelated[i]._id, { recursive: true })
+            
+            if (fs.existsSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + tasksRelated[i]._id)) {
+                fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + tasksRelated[i]._id, { recursive: true })
+            }
             const r = await Task.remove({ _id: tasksRelated[i]._id })
         }
     }
 
-    fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + taskId, { recursive: true })
+    if (fs.existsSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + taskId)) {
+        fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + taskId, { recursive: true })
+      }
 
     const response = await Task.remove({ _id: taskId })
 

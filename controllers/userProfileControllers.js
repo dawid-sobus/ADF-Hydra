@@ -70,7 +70,10 @@ const deleteUserDelete = async (req, res) => {
 
     const user = await User.findById(loggedUserId)
 
-    fs.rmdirSync('./public/uploads/' + user.login, { recursive: true })
+    
+    if (fs.existsSync('./public/uploads/' + user.login)) {
+        fs.rmdirSync('./public/uploads/' + user.login, { recursive: true })
+    }
 
     Task.remove({ userId: user._id }, (err, response) => { //usuwa wszystkie taski o id podanym
         if (err) {
