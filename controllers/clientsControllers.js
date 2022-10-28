@@ -427,7 +427,7 @@ const deleteTaskDelete = async (req, res) => {
         var tasksRelated = await Task.find({ relatedTask: taskT._id })
         var leng = tasksRelated.length
         for (var i = 0; i < leng; i++) {
-            
+            console.log(fs.existsSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + tasksRelated[i]._id))
             if (fs.existsSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + tasksRelated[i]._id)) {
                 fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + tasksRelated[i]._id, { recursive: true })
             }
