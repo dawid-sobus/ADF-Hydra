@@ -423,33 +423,25 @@ const deleteTaskDelete = async (req, res) => {
     const user = await User.findById(client.userId)
     const taskT = await Task.findById(taskId)
 
-    console.log('0000000000---'+taskT.relatedTask)
     if (taskT.relatedTask == undefined) {
         
         var tasksRelated = await Task.find({ relatedTask: taskT._id })
         var leng = tasksRelated.length
-        console.log("11111-----------------------------------------------------------")
         for (var i = 0; i < leng; i++) {
-            console.log("iiiiiiiiiiiiiii-----------------------------------------------------------")
             if (fs.existsSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + tasksRelated[i]._id)) {
-                console.log("22222-----------------------------------------------------------")
                 fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + tasksRelated[i]._id, { recursive: true })
             }
             const r = await Task.remove({ _id: tasksRelated[i]._id })
         }
     }
-    console.log("333333-----------------------------------------------------------")
-    console.log(fs.existsSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + taskId))
+
     if (fs.existsSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + taskId)) {
-        console.log("444444-----------------------------------------------------------")
         fs.rmdirSync('./public/uploads/' + user.login + '/' + client.name + client.lastName + client._id + '/' + taskId, { recursive: true })
       }
-      console.log("555555-----------------------------------------------------------")
+
     const response = await Task.remove({ _id: taskId })
-    console.log("666666----------------------------------------------------------")
 
     res.redirect('/strona_glowna/klienci/' + id)
-    //res.json({ redirect: '/strona_glowna/klienci/' + id }) //musimy to zwrocic jako json bo w javascript nie da sie zwrocic przekierowania jakos response dlatego musimy to zwrocic jako json
 }
 
 const deleteFiles = async (req, res) => {

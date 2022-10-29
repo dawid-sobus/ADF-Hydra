@@ -1784,6 +1784,9 @@ cursor: pointer;
     max-width: 150px;
     min-width: 45px;
 }
+.delete-task form {
+    display: inline;
+}
 .delete-client .delete-clients-buttons button:hover, .delete-files .delete-files-buttons button:hover, .delete-task .delete-task-buttons button:hover, .delete-user .delete-user-buttons button:hover{
     background-color: #606060;
     cursor: pointer;
