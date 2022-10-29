@@ -36,7 +36,7 @@ router.post('/:id/:taskId/edytuj_pliki', clientController.postEditFiles)
 
 router.get('/:id/:taskId/usun_usluge', verifyToken, clientController.deleteTask)
 
-router.delete('/:id/:taskId/usun_usluge', clientController.deleteTaskDelete)
+router.post('/:id/:taskId/usun_usluge', clientController.deleteTaskDelete)
 
 router.get('/:id/:taskId/edytuj_pliki/:file', verifyToken, clientController.deleteFiles)
 
