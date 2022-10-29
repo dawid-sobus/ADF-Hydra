@@ -446,7 +446,7 @@ const deleteTaskDelete = async (req, res) => {
       }
       console.log("555555-----------------------------------------------------------")
     const response = await Task.remove({ _id: taskId })
-    console.log("666666-----------------------------------------------------------")
+    console.log("666666----------------------------------------------------------")
 
     res.redirect('/strona_glowna/klienci/' + id)
     //res.json({ redirect: '/strona_glowna/klienci/' + id }) //musimy to zwrocic jako json bo w javascript nie da sie zwrocic przekierowania jakos response dlatego musimy to zwrocic jako json
