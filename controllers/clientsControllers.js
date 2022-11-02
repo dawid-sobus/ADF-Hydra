@@ -38,6 +38,7 @@ const detailsClientsTasks = async (req, res) => {
 }
 
 const postDetailsClientsTasks = async (req, res) => {
+    var { loggedUserId } = require('./loginRegisterHomeControllers')
     const id = req.params.id
     try {
         var month = req.body.month
