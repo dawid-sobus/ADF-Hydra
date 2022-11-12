@@ -9,7 +9,7 @@ const { uploadFileInvoice } = require('./loginRegisterHomeControllers')
 const { uploadFilePostWarrantyProtocols } = require('./loginRegisterHomeControllers')
 
 const viewClients = async (req, res) => {
-    var { loggedUserId } = require('./loginRegisterHomeControllers')
+    var { loggedUserId } = require('./loginRegisterHomeControllers') //inicjalizacja zmiennej loggedUserId
     const clientsResult = await Client.find({ userId: loggedUserId }).sort({ createdAt: -1 })
     const user = await User.findById(loggedUserId)
 
