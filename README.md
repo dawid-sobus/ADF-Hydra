@@ -23,3 +23,5 @@ Na stronie głównej wyświetlane są serwisy oraz naprawy, które są zapisane 
 - Uruchomienie aplikacji:
 Należy pobrać i otworzyć aplikację, a następnie w terminalu wpisać polecenie:
 node app.js
+- aplikacja uruchamia się na:
+localhost:3000
