@@ -62,6 +62,11 @@ Clicking the "Delete File" button will prompt a message asking, "Are you sure yo
 
 After viewing the service details and clicking "Delete Service," a window will appear asking, "Are you sure you want to delete this service?" After confirm
 
+# Technologies
+- JavaScript, Node.js, Express.js (backend)
+- EJS, HTML, CSS (frontend)
+- MongoDb (database)
+
 # - Running the application:
   
 - You need to download and open the application, then in the terminal, enter the command:
